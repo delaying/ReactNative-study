@@ -1,7 +1,7 @@
 ## 개요
-[Fast Campus - React Native](https://fastcampus.co.kr/dev_online_renative)이 강의를 수강하면서 공부한 내용을 실습하며 정리한 프로젝트입니다.
+[Fast Campus - React Native](https://fastcampus.co.kr/dev_online_renative) 강의를 수강하면서 공부한 내용을 실습하며 정리한 프로젝트입니다.
 
-Expo CLI와 React Native CLI를 사용하였고, 폴더별로 각 프로젝트를 진행하였습니다.
+Expo CLI와 React Native CLI를 사용하였고, 폴더별로 각 프로젝트들을 진행하였습니다.
 
 
 ## Expo CLI 사용 프로젝트
