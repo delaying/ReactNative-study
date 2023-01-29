@@ -4,6 +4,9 @@
 Expo CLI와 React Native CLI를 사용하였고, 폴더별로 각 프로젝트들을 진행하였습니다.
 
 
+React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하며 기록한 [블로그](https://delaying.github.io/tags/react-native/)입니다. 
+
+
 ## Expo CLI 사용 프로젝트
 - [까까오톡 친구목록 클론코딩](https://github.com/delaying/ReactNative-study/tree/main/kakao-friend-list)
 - 계산기
