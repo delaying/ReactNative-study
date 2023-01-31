@@ -3,6 +3,7 @@ import Margin from "./Margin"
 import Profile from "./Profile"
 
 export default (props) => {
+    if(!props.isOpened) return null;
     return(
         <ScrollView>
             {props.data.map((item,index)=>(

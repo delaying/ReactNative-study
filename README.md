@@ -7,7 +7,7 @@ Expo CLI와 React Native CLI를 사용하였고, 폴더별로 각 프로젝트�
 React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하며 기록한 [블로그](https://delaying.github.io/tags/react-native/)입니다. 
 
 
-## Expo CLI 사용 프로젝트
+## Expo CLI 프로젝트
 - [까까오톡 친구목록 클론코딩](https://github.com/delaying/ReactNative-study/tree/main/kakao-friend-list)
 - 계산기
 - 투두리스트 + 달력
@@ -21,7 +21,7 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 - 나만의 일기 앱
 - 인스타그램 클론 코딩
 
-## React Native CLI 사용 프로젝트
+## React Native CLI 프로젝트
 - Native Module 계산기 앱
 - 핸드폰 센서를 이용한 평형계
 - 맛집 공유 앱
@@ -29,9 +29,10 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 - 요튜브 클론 코딩
 - Love Dog
 
-## 최종 프로젝트
-- react native Animation 연습
+## React Native Animation 프로젝트 
 - 요튜브뮤직 클론 코딩
 - 모바일페이 클론 코딩
+
+## 최종 프로젝트
 - 채팅 앱
 - 영화 정보 앱
