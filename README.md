@@ -9,7 +9,7 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 
 ## Expo CLI 프로젝트
 - [까까오톡 친구목록 클론코딩](https://github.com/delaying/ReactNative-study/tree/main/kakao-friend-list)
-- 계산기
+- [계산기](https://github.com/delaying/ReactNative-study/tree/main/calculator)
 - 투두리스트 + 달력
 - 나만의 갤러리
 - 까까오버스 클론 코딩

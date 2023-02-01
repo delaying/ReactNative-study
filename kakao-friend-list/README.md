@@ -1,7 +1,7 @@
 # 까까오톡 친구목록 클론코딩
 
 ## 결과 화면 
-<img src="https://user-images.githubusercontent.com/72879145/215688680-4bcb24ae-916e-4479-a274-180f0c7d1ebd.gif" width="200" height="500">
+<img src="https://user-images.githubusercontent.com/72879145/215688680-4bcb24ae-916e-4479-a274-180f0c7d1ebd.gif" width="200" height="400">
 
 
 ## 실행 
