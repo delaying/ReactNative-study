@@ -11,7 +11,7 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 - [까까오톡 친구목록 클론코딩](https://github.com/delaying/ReactNative-study/tree/main/kakao-friend-list)
 - [계산기](https://github.com/delaying/ReactNative-study/tree/main/calculator)
 - [투두리스트+달력](https://github.com/delaying/ReactNative-study/tree/main/todo-calendar)
-- 나만의 갤러리
+- [나만의 갤러리](https://github.com/delaying/ReactNative-study/tree/main/my-gallery)
 - 까까오버스 클론 코딩
 - 번역앱
 - 핸드폰 배경화면 앱 
