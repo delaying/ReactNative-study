@@ -1,4 +1,4 @@
-# Todo 리스트와 Calendar
+# 나만의 갤러리
 
 ## 결과 화면 
 <img src="" width="200" height="400">
