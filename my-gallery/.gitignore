@@ -10,5 +10,9 @@ npm-debug.*
 *.orig.*
 web-build/
 
+# admob 앱 ID 작성되어있음
+src/use-reward-ad.js
+app.json
+
 # macOS
 .DS_Store
