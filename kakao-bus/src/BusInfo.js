@@ -5,6 +5,7 @@ import { COLOR } from "./color";
 import NextBusInfo from "./NextBusInfo";
 
 export default ({
+  NEWCOLOR,
   isBookmarked,
   onPressBookmark,
   num,
@@ -13,10 +14,17 @@ export default ({
   processedNextBusInfos,
 }) => {
   return (
-    <View style={{ flexDirection: "row", height: 75 }}>
-      <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
+    <View
+      style={{
+        flexDirection: "row",
+        height: 75,
+        backgroundColor: NEWCOLOR.WHITE_BLACK,
+      }}
+    >
+      <View style={{ flex: 0.85, flexDirection: "row", alignItems: "center" }}>
         {/* 북마크 */}
         <BookmarkButton
+          NEWCOLOR={NEWCOLOR}
           size={20}
           isBookmarked={isBookmarked}
           onPress={onPressBookmark}
@@ -25,7 +33,7 @@ export default ({
         {/* 버스번호, 방향 */}
         <View style={{ flex: 1 }}>
           <Text style={{ color: numColor, fontSize: 20 }}>{num}</Text>
-          <Text style={{ fontSize: 13, color: COLOR.GRAY_3 }}>
+          <Text style={{ fontSize: 13, color: COLOR.GRAY_3, marginRight: 5 }}>
             {directionDescription} 방향
           </Text>
         </View>
@@ -36,6 +44,7 @@ export default ({
         <View style={{ flex: 1 }}>
           {processedNextBusInfos.map((info, index) => (
             <NextBusInfo
+              NEWCOLOR={NEWCOLOR}
               key={`next-bus-info-${index}`}
               hasInfo={info.hasInfo}
               remainedTimeText={info.remainedTimeText}
@@ -52,7 +61,11 @@ export default ({
           <NextBusInfo hasInfo={false} remainedTimeText={"도착 정보 없음"} /> */}
         </View>
         {/* 알람아이콘 */}
-        <AlarmButton onPress={() => {}} style={{ paddingHorizontal: 15 }} />
+        <AlarmButton
+          NEWCOLOR={NEWCOLOR}
+          onPress={() => {}}
+          style={{ paddingHorizontal: 15 }}
+        />
       </View>
     </View>
   );
