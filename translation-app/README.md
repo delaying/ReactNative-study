@@ -2,7 +2,7 @@
 
 ## 결과 화면
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/218297145-1d1afe75-0615-4940-a082-92569490d978.GIF" width="200" height="400">
 
 ## 목차
 
@@ -144,8 +144,32 @@ export default () => {
 
 ### react-string-format
 
-### expo font
+[react-string-format](https://www.npmjs.com/package/react-string-format)은 문자열, 숫자 및 native 요소를 매개변수로 사용하여 문자열 형식을 지정한다.
 
+```json
+{
+  "today_is": "Today is {1}/{2}/{0}."
+}
 ```
 
+위 형태의 string형태를 format을 사용해서 {}안의 내용을 원하는대로 바꿀 수 있다.
+
+```jsx
+import { format } from "react-string-format";
+
+const todayText = format(t("today_is"), 2023, 11, 1);
+```
+
+### expo font
+
+프로젝트에서 사용할 폰트를 다운받은 후, [expo font](https://docs.expo.dev/versions/latest/sdk/font/)를 설치한다.
+
+`npx expo install expo-font`
+
+폰트파일을 assets/fonts 폴더에 붙여넣고, 아래처럼 작성한 후 fontFamily로 사용하면된다.
+
+```jsx
+const [fontsLoaded] = useFonts({
+  "Inter-Black": require("./assets/fonts/Inter-Black.otf"),
+});
 ```
