@@ -16,7 +16,7 @@ export default ({ onPress, isSelected, text }) => {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: "#ffffff80",
+    backgroundColor: "#ffffff40",
     borderWidth: 2,
     borderRadius: 15,
     paddingHorizontal: 10,
