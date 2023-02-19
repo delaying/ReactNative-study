@@ -15,7 +15,7 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 - [까까오버스 클론 코딩](https://github.com/delaying/ReactNative-study/tree/main/kakao-bus#까까오-버스-클론코딩)
 - [번역앱](https://github.com/delaying/ReactNative-study/tree/main/translation-app#번역-앱)
 - [핸드폰 배경화면 앱](https://github.com/delaying/ReactNative-study/tree/main/wallpaper#배경화면-앱)
-- 로또 번호 생성기
+- [로또 번호 생성기](https://github.com/delaying/ReactNative-study/tree/main/lotto#로또-번호-생성)
 - 웹페이지 스크랩 앱
 - 뉴스 스크랩 앱
 - 나만의 일기 앱
