@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import propTypes from "prop-types";
-import Typography from "./components/Typography";
+import Typography from "./Typography";
 
 export const Badge = (props) => {
   return (
