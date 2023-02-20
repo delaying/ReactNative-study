@@ -8,15 +8,30 @@ import { RemoteImage } from "../components/RemoteImage";
 import { Typography } from "../components/Typography";
 import * as FileSystem from "expo-file-system";
 import * as MediaLibrary from "expo-media-library";
+import { useDispatch, useSelector } from "react-redux";
+import { onClickFavorite } from "../actions/favorite";
 
 export default (props) => {
   const navigation = useNavigation();
   const route = useRoute();
   const [downloading, setDownloading] = useState(false);
+  const dispatch = useDispatch();
+  const isFavorite = useSelector((state) => {
+    return (
+      state.favorite.favorite.filter((item) => item === route.params.url)
+        .length > 0
+    );
+  });
+
+  const onPressFavorite = useCallback(() => {
+    console.log("onfavorite");
+    dispatch(onClickFavorite(route.params.url));
+  }, []);
 
   const onPressBack = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
+
   const onPreesDownload = useCallback(async () => {
     setDownloading(true);
     const downloadResumable = FileSystem.createDownloadResumable(
@@ -70,6 +85,10 @@ export default (props) => {
           <Header.Icon iconName={"arrow-back"} onPress={onPressBack} />
           <Header.Title title="Image Detail" />
         </Header.Group>
+        <Header.Icon
+          iconName={isFavorite ? "heart" : "heart-outline"}
+          onPress={onPressFavorite}
+        />
       </Header>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <RemoteImage
