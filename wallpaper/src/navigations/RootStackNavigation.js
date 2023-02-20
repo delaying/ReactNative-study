@@ -8,7 +8,7 @@ export default () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="bottomTab" component={BottomTabNavigations} />
-      <Stack.Screen name="ImageDeatail" component={ImageDetailScreen} />
+      <Stack.Screen name="ImageDetail" component={ImageDetailScreen} />
     </Stack.Navigator>
   );
 };

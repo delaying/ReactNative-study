@@ -4,7 +4,7 @@ import PhotoListItem from "../components/PhotoListItem";
 import { Typography } from "../components/Typography";
 import { IMAGE_LIST } from "../constants";
 
-export default ({ props }) => {
+export default (props) => {
   return (
     <View style={{ flex: 1 }}>
       <Header>
@@ -19,7 +19,6 @@ export default ({ props }) => {
           return <PhotoListItem url={item} />;
         }}
       ></FlatList>
-      <Typography color={"black"} fontSize={14} text="image list"></Typography>
     </View>
   );
 };
