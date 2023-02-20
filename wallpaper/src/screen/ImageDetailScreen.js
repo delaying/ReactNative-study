@@ -11,20 +11,19 @@ import * as MediaLibrary from "expo-media-library";
 import { useDispatch, useSelector } from "react-redux";
 import { onClickFavorite } from "../actions/favorite";
 
-export default (props) => {
+export default () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const [downloading, setDownloading] = useState(false);
   const dispatch = useDispatch();
   const isFavorite = useSelector((state) => {
     return (
-      state.favorite.favorite.filter((item) => item === route.params.url)
+      state.favorite.favorite?.filter((item) => item == route.params.url)
         .length > 0
     );
   });
+  const [downloading, setDownloading] = useState(false);
 
   const onPressFavorite = useCallback(() => {
-    console.log("onfavorite");
     dispatch(onClickFavorite(route.params.url));
   }, []);
 
@@ -40,10 +39,8 @@ export default (props) => {
     );
     try {
       const { uri } = await downloadResumable.downloadAsync();
-      console.log("file download", uri);
 
       const permissionResult = await MediaLibrary.getPermissionsAsync(true);
-      console.log("permissionResult", permissionResult);
 
       if (permissionResult.status === "denied") {
         // 아예 못쓰는 상태
