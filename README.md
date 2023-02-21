@@ -16,7 +16,7 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 - [번역앱](https://github.com/delaying/ReactNative-study/tree/main/translation-app#번역-앱)
 - [핸드폰 배경화면 앱](https://github.com/delaying/ReactNative-study/tree/main/wallpaper#배경화면-앱)
 - [웹페이지 스크랩 앱](https://github.com/delaying/ReactNative-study/tree/main/scrap#웹페이지-스크랩-앱)
-- 뉴스 스크랩 앱
+- [뉴스 스크랩 앱](https://github.com/delaying/ReactNative-study/tree/main/news-scrap#뉴스-스크랩-앱)
 - 나만의 일기 앱
 - 인스타그램 클론 코딩
 
