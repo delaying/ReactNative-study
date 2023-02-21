@@ -5,7 +5,7 @@ import { Icon } from "../Icon";
 export const HeaderIcon = (props) => {
   return (
     <Button onPress={props.onPress}>
-      <Icon iconName={props.iconName} iconSize={28} />
+      <Icon name={props.iconName} size={28} />
     </Button>
   );
 };
