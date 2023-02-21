@@ -9,7 +9,7 @@ export const RecoilCustomPersist = (props) => {
 
   const loadData = useCallback(async () => {
     const data = await getItem("MAIN/LINK_LIST");
-    setList(data);
+    setList(data ?? { list: [] });
     setIsLoaded(true);
   }, []);
 

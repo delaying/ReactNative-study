@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
-import { useCallback } from "react";
-import { FlatList, View } from "react-native";
+import { useCallback, useMemo } from "react";
+import { FlatList, SectionList, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useRecoilValue } from "recoil";
 import { Button } from "../components/Button";
@@ -21,6 +21,32 @@ export default () => {
   const onPressAddButtton = useCallback(() => {
     navigation.navigate("AddLink");
   }, []);
+  const sectionData = useMemo(() => {
+    const dateList = {};
+
+    const makeDateString = (createdAt) => {
+      const dateItem = new Date(createdAt);
+      return `${dateItem.getFullYear()}.${dateItem.getMonth()}.${dateItem.getDay()} ${dateItem.getHours()}:${dateItem.getMinutes()}`;
+    };
+    if (!data.list) return [];
+
+    data.list.forEach((item) => {
+      const keyName = makeDateString(item.createdAt);
+      if (!dateList[keyName]) {
+        dateList[keyName] = [item];
+      } else {
+        dateList[keyName].push(item);
+      }
+    });
+
+    return Object.keys(dateList).map((item) => {
+      return {
+        title: item,
+        data: dateList[item],
+      };
+    });
+  }, [data?.list]);
+
   return (
     <View style={{ flex: 1 }}>
       <Header>
@@ -29,9 +55,10 @@ export default () => {
         </Header.Group>
       </Header>
 
-      <FlatList
+      <SectionList
         style={{ flex: 1 }}
-        data={data.list}
+        sections={sectionData}
+        keyExtractor={(item, index) => `${item}.${index}`}
         renderItem={({ item }) => {
           return (
             <Button
@@ -50,6 +77,23 @@ export default () => {
                 </Typography>
               </View>
             </Button>
+          );
+        }}
+        renderSectionHeader={({ section }) => {
+          console.log(section);
+
+          return (
+            <View
+              style={{
+                paddingHorizontal: 12,
+                paddingVertical: 4,
+                backgroundColor: "white",
+              }}
+            >
+              <Typography color={"gray"} fontSize={12}>
+                {section.title}
+              </Typography>
+            </View>
           );
         }}
       />
