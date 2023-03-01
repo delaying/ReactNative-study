@@ -9,10 +9,3 @@ export const RemoteImage = (props) => {
     />
   );
 };
-
-RemoteImage.propTypes = {
-  url: propTypes.string.isRequired,
-  width: propTypes.number,
-  height: propTypes.number,
-  style: propTypes.object,
-};

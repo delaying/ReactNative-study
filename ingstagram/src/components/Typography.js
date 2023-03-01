@@ -14,10 +14,3 @@ export const Typography = (props) => {
     </RNText>
   );
 };
-
-Typography.propTypes = {
-  color: PropTypes.string,
-  fontSize: PropTypes.number,
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
-    .isRequired,
-};

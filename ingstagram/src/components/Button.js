@@ -19,15 +19,4 @@ export const Button = (props) => {
   );
 };
 
-Button.propTypes = {
-  onPress: propTypes.func.isRequired,
-  children: propTypes.element.isRequired,
-  hitSlop: propTypes.exact({
-    left: propTypes.number,
-    right: propTypes.number,
-    top: propTypes.number,
-    bottom: propTypes.number,
-  }),
-  paddingHorizontal: propTypes.number,
-  paddingVertical: propTypes.number,
-};
+export default Button;
