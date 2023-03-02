@@ -12,6 +12,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2E7AB33C29B0875700E1E0E0 /* CalculatorModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7AB33B29B0875700E1E0E0 /* CalculatorModule.swift */; };
+		2E7AB33E29B089CE00E1E0E0 /* CalculatorModuleBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7AB33D29B089CE00E1E0E0 /* CalculatorModuleBridge.m */; };
 		7699B88040F8A987B510C191 /* libPods-RNCalculator-RNCalculatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNCalculator-RNCalculatorTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,9 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RNCalculator/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNCalculator/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNCalculator-RNCalculatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCalculator-RNCalculatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E7AB33A29B0875600E1E0E0 /* RNCalculator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNCalculator-Bridging-Header.h"; sourceTree = "<group>"; };
+		2E7AB33B29B0875700E1E0E0 /* CalculatorModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModule.swift; sourceTree = "<group>"; };
+		2E7AB33D29B089CE00E1E0E0 /* CalculatorModuleBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorModuleBridge.m; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-RNCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCalculator.debug.xcconfig"; path = "Target Support Files/Pods-RNCalculator/Pods-RNCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-RNCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCalculator.release.xcconfig"; path = "Target Support Files/Pods-RNCalculator/Pods-RNCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-RNCalculator-RNCalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCalculator-RNCalculatorTests.debug.xcconfig"; path = "Target Support Files/Pods-RNCalculator-RNCalculatorTests/Pods-RNCalculator-RNCalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +97,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				2E7AB33B29B0875700E1E0E0 /* CalculatorModule.swift */,
+				2E7AB33A29B0875600E1E0E0 /* RNCalculator-Bridging-Header.h */,
+				2E7AB33D29B089CE00E1E0E0 /* CalculatorModuleBridge.m */,
 			);
 			name = RNCalculator;
 			sourceTree = "<group>";
@@ -207,7 +215,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -412,6 +420,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7AB33E29B089CE00E1E0E0 /* CalculatorModuleBridge.m in Sources */,
+				2E7AB33C29B0875700E1E0E0 /* CalculatorModule.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -432,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-RNCalculator-RNCalculatorTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -459,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-RNCalculator-RNCalculatorTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = RNCalculatorTests/Info.plist;
@@ -486,6 +498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXFJCP6359;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RNCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -500,6 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNCalculator;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNCalculator-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -513,6 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXFJCP6359;
 				INFOPLIST_FILE = RNCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -526,6 +541,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNCalculator;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNCalculator-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
