@@ -20,7 +20,7 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 
 ## React Native CLI 프로젝트
 
-- Native Module 계산기 앱
+- [Native Module 계산기 앱](https://github.com/delaying/ReactNative-study/tree/main/RNCalculator#Native-Module-계산기-앱)
 - 핸드폰 센서를 이용한 평형계
 - 맛집 공유 앱
 - 가계부 앱
