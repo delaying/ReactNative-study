@@ -10,6 +10,7 @@ import Foundation
 @objc(CalculatorModule)
 class CalculatorModule:NSObject {
   
+  
   @objc(executeCalc:numberA:numberB:resolver:rejector:)
   public func executeCalc(_ action:String, numberA:Int, numberB:Int, resolver:RCTPromiseResolveBlock, rejector:RCTPromiseRejectBlock) -> Void{
     
