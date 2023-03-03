@@ -2,7 +2,7 @@
 
 ## 결과 화면
 
-<img src="https://user-images.githubusercontent.com/72879145/222646600-6ee43322-061d-43d1-b2ac-c1c491977a59.GIF" width="400" height="500">
+<img src="https://user-images.githubusercontent.com/72879145/222646600-6ee43322-061d-43d1-b2ac-c1c491977a59.GIF" width="400" height="400">
 
 ## 목차
 
@@ -21,7 +21,7 @@
 npm run ios && npm run android
 ```
 
-xcode와 android studio를 설치하거나, 직접 모바일 기기를 연결하여 실행 결과를 확인할 수 있다.
+xcode와 android studio를 설치하거나, 직접 모바일 기기를 연결하여 프로젝트 결과를 확인할 수 있다.
 
 ## 정리
 
@@ -80,8 +80,7 @@ native module 작성 시 visual studio보다 android studio와 xcode에서 직�
   //react package사용가능하도록 다음을 import
   #import <React/RCTBridgeModule.h>
   ```
-- ModuleBridge 파일 작성
-- objective_C file 작성
+- ModuleBridge 파일을 objective_C로 작성
 - command + b 키로 build 가능
 
 처음으로 rn cli를 실행했더니 에러가 발생하였다.
@@ -90,7 +89,7 @@ native module 작성 시 visual studio보다 android studio와 xcode에서 직�
 Singing for "app_name" requires a development team.
 ```
 
-ios 핸드폰을 개발자 모드로 전환하고 team 설정해야했다.
+ios 핸드폰을 개발자 모드로 전환하고 team 설정을 해야했다.
 
 이 [사이트](https://velog.io/@kekeke257/Xcode-development-team)를 참고하여 해결하였다.
 
@@ -104,11 +103,14 @@ Failed to create provisioning profile.
 No profiles for 'org.reactjs.native.example.RNCalculator' were found.
 ```
 
-실행할 기기가 분명하지 않아 발생했다.
+실행할 기기가 분명하지 않아 발생한 에러이다.
 
 이 [사이트](https://stackoverflow.com/questions/39603667/failed-to-create-provisioning-profile)를 참고하여 해결하였다.
 
-또한, 키체인 입력 창이 떴는데 enter키 누르니까 그냥 넘어갔고, 핸드폰이 직접적으로 연결되어 있으면 가상 시뮬레이터가 뜨지 않는 등의 다양한 실행착오를 겪었다.
+또한, 다음과 같은 다양한 실행착오를 겪었다.
+
+- 키체인 입력 창이 떠서 아무 입력없이 enter키 누르니까 해결
+- 핸드폰이 직접적으로 연결되어 있으면 가상 시뮬레이터가 뜨지 않음
 
 #### View 작성
 
