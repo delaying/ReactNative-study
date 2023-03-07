@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@react-native-community/geolocation": "^3.0.5",
+    "@react-native-firebase/app": "^17.3.2",
+    "@react-native-firebase/database": "^17.3.2",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "@types/react-native-vector-icons": "^6.4.13",
