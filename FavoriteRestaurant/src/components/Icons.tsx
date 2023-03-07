@@ -1,6 +1,8 @@
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import React from 'react';
 
+Ionicons.loadFont();
+
 export type TypeIconName = string;
 
 export const Icon: React.FC<{
