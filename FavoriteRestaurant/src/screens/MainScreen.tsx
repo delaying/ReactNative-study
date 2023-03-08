@@ -1,15 +1,23 @@
 import Geolocation from '@react-native-community/geolocation';
 import React, {useCallback, useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
+import {Pressable, Text, View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import {SingleLineInput} from '../components/SingleLineInput';
+import {useRootNavigation} from '../navigation/RootNavigation';
 import {
   getAddressFromCoords,
   getCoordsFromAddress,
   getCoordsFromKeyword,
 } from '../utils/GeoUtils';
+import {getRestrauntList} from '../utils/RealTimeDataBaseUtils';
 
 export const MainScreen: React.FC = () => {
+  const navigation = useRootNavigation<'Main'>();
+  const [isMapReady, setIsMapReady] = useState<boolean>(false);
+  const [markerList, setMarkerList] = useState<
+    {title: string; latitude: number; longitude: number; address: string}[]
+  >([]);
+
   // latitude : 37.3331425
   // longitude : 127.541649
   const [query, setQuery] = useState<string>('');
@@ -65,6 +73,29 @@ export const MainScreen: React.FC = () => {
     });
   }, [query]);
 
+  const onPressBottomAddress = useCallback<() => void>(() => {
+    if (currentAddress === null) {
+      return;
+    }
+
+    navigation.push('Add', {
+      latitude: currentRegion.latitude,
+      longitude: currentRegion.longitude,
+      address: currentAddress,
+    });
+  }, [
+    currentAddress,
+    currentRegion.latitude,
+    currentRegion.longitude,
+    navigation,
+  ]);
+
+  const onMapReady = useCallback(async () => {
+    setIsMapReady(true);
+    const restaurantList = await getRestrauntList();
+    setMarkerList(restaurantList);
+  }, []);
+
   useEffect(() => {
     getMyLocation();
   }, [getMyLocation]);
@@ -79,15 +110,33 @@ export const MainScreen: React.FC = () => {
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
         }}
+        onMapReady={onMapReady}
         onLongPress={event => {
           onChangeLocation(event.nativeEvent.coordinate);
         }}>
-        <Marker
-          coordinate={{
-            latitude: currentRegion.latitude,
-            longitude: currentRegion.longitude,
-          }}
-        />
+        {isMapReady && (
+          <Marker
+            coordinate={{
+              latitude: currentRegion.latitude,
+              longitude: currentRegion.longitude,
+            }}
+          />
+        )}
+
+        {isMapReady &&
+          markerList.map(item => {
+            return (
+              <Marker
+                title={item.title}
+                description={item.address}
+                coordinate={{
+                  latitude: item.latitude,
+                  longitude: item.longitude,
+                }}
+                pinColor="blue"
+              />
+            );
+          })}
       </MapView>
 
       <View style={{position: 'absolute', top: 24, left: 24, right: 24}}>
@@ -111,7 +160,8 @@ export const MainScreen: React.FC = () => {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <View
+          <Pressable
+            onPress={onPressBottomAddress}
             style={{
               backgroundColor: 'gray',
               paddingHorizontal: 24,
@@ -119,7 +169,7 @@ export const MainScreen: React.FC = () => {
               borderRadius: 30,
             }}>
             <Text style={{fontSize: 16, color: 'white'}}>{currentAddress}</Text>
-          </View>
+          </Pressable>
         </View>
       )}
     </View>
