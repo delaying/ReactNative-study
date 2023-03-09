@@ -134,6 +134,14 @@ export const MainScreen: React.FC = () => {
                   longitude: item.longitude,
                 }}
                 pinColor="blue"
+                onCalloutPress={() => {
+                  navigation.push('Detail', {
+                    latitude: item.latitude,
+                    longitude: item.longitude,
+                    address: item.address,
+                    title: item.title,
+                  });
+                }}
               />
             );
           })}

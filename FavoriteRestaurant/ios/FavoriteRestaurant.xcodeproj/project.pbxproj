@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1F1A34BBD9E44833827D6D74 /* Pods_FavoriteRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6DB9CF8304633B744EAD76 /* Pods_FavoriteRestaurant.framework */; };
+		2E614A1129B96BA6000486E0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E614A1029B96BA6000486E0 /* File.swift */; };
 		2E6B8EDE29B7048F00FFF930 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E6B8ECE29B7048F00FFF930 /* Fontisto.ttf */; };
 		2E6B8EDF29B7048F00FFF930 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E6B8ECF29B7048F00FFF930 /* Octicons.ttf */; };
 		2E6B8EE029B7048F00FFF930 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E6B8ED029B7048F00FFF930 /* Feather.ttf */; };
@@ -53,6 +54,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FavoriteRestaurant/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FavoriteRestaurant/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FavoriteRestaurant/main.m; sourceTree = "<group>"; };
+		2E614A0F29B96BA6000486E0 /* FavoriteRestaurant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteRestaurant-Bridging-Header.h"; sourceTree = "<group>"; };
+		2E614A1029B96BA6000486E0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		2E6B8ECE29B7048F00FFF930 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		2E6B8ECF29B7048F00FFF930 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		2E6B8ED029B7048F00FFF930 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2E614A1029B96BA6000486E0 /* File.swift */,
 				2E6B8EF029B726D800FFF930 /* GoogleService-Info.plist */,
 				2E6B8ECD29B7048F00FFF930 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* FavoriteRestaurant */,
@@ -182,6 +186,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				2E614A0F29B96BA6000486E0 /* FavoriteRestaurant-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -268,7 +273,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -504,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				2E614A1129B96BA6000486E0 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-FavoriteRestaurant-FavoriteRestaurantTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -550,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-FavoriteRestaurant-FavoriteRestaurantTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = FavoriteRestaurantTests/Info.plist;
@@ -592,6 +600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = FavoriteRestaurant;
+				SWIFT_OBJC_BRIDGING_HEADER = "FavoriteRestaurant-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -619,6 +628,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = FavoriteRestaurant;
+				SWIFT_OBJC_BRIDGING_HEADER = "FavoriteRestaurant-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -680,7 +690,6 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/lib/swift\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -745,7 +754,6 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/lib/swift\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;

@@ -10,7 +10,7 @@
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_round"
-      android:allowBackup="false"
+      android:allowBackup="true"
       android:theme="@style/AppTheme">
       <meta-data
      android:name="com.google.android.geo.API_KEY"
@@ -26,6 +26,12 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:host="kakaolink" android:scheme="kakao15912a135cb886724357e1c9f28ff956" />
+      </intent-filter>
       </activity>
     </application>
 </manifest>

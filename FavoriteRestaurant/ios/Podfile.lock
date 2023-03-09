@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.6.4)
   - boost (1.76.0)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.71.3)
@@ -14,6 +15,9 @@ PODS:
   - Firebase/Database (10.6.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 10.6.0)
+  - Firebase/DynamicLinks (10.6.0):
+    - Firebase/CoreOnly
+    - FirebaseDynamicLinks (~> 10.6.0)
   - FirebaseCore (10.6.0):
     - FirebaseCoreInternal (~> 10.0)
     - GoogleUtilities/Environment (~> 7.8)
@@ -23,16 +27,40 @@ PODS:
   - FirebaseDatabase (10.6.0):
     - FirebaseCore (~> 10.0)
     - leveldb-library (~> 1.22)
+  - FirebaseDynamicLinks (10.6.0):
+    - FirebaseCore (~> 10.0)
   - fmt (6.2.1)
   - glog (0.3.5)
+  - GoogleUtilities/AppDelegateSwizzler (7.11.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
   - GoogleUtilities/Environment (7.11.0):
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.11.0):
     - GoogleUtilities/Environment
+  - GoogleUtilities/Network (7.11.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
   - "GoogleUtilities/NSData+zlib (7.11.0)"
+  - GoogleUtilities/Reachability (7.11.0):
+    - GoogleUtilities/Logger
   - hermes-engine (0.71.3):
     - hermes-engine/Pre-built (= 0.71.3)
   - hermes-engine/Pre-built (0.71.3)
+  - KakaoSDKCommon (2.4.1):
+    - KakaoSDKCommon/Common (= 2.4.1)
+    - KakaoSDKCommon/Network (= 2.4.1)
+  - KakaoSDKCommon/Common (2.4.1)
+  - KakaoSDKCommon/Network (2.4.1):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.4.1)
+  - KakaoSDKLink (2.4.1):
+    - KakaoSDKCommon (= 2.4.1)
+    - KakaoSDKTemplate (= 2.4.1)
+  - KakaoSDKTemplate (2.4.1):
+    - KakaoSDKCommon/Common (= 2.4.1)
   - leveldb-library (1.22.1)
   - libevent (2.1.12)
   - PromisesObjC (2.2.0)
@@ -289,6 +317,11 @@ PODS:
     - glog
   - react-native-geolocation (3.0.5):
     - React-Core
+  - react-native-kakao-share-link (1.0.6):
+    - KakaoSDKCommon (~> 2.4.0)
+    - KakaoSDKLink (~> 2.4.0)
+    - KakaoSDKTemplate (~> 2.4.0)
+    - React-Core
   - react-native-maps (1.4.0):
     - React-Core
   - react-native-safe-area-context (4.5.0):
@@ -388,6 +421,11 @@ PODS:
     - Firebase/Database (= 10.6.0)
     - React-Core
     - RNFBApp
+  - RNFBDynamicLinks (17.3.2):
+    - Firebase/DynamicLinks (= 10.6.0)
+    - GoogleUtilities/AppDelegateSwizzler
+    - React-Core
+    - RNFBApp
   - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
@@ -417,6 +455,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
+  - react-native-kakao-share-link (from `../node_modules/react-native-kakao-share-link`)
   - react-native-maps (from `../node_modules/react-native-maps`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -434,17 +473,23 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBDatabase (from `../node_modules/@react-native-firebase/database`)"
+  - "RNFBDynamicLinks (from `../node_modules/@react-native-firebase/dynamic-links`)"
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseCore
     - FirebaseCoreInternal
     - FirebaseDatabase
+    - FirebaseDynamicLinks
     - fmt
     - GoogleUtilities
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKTemplate
     - leveldb-library
     - libevent
     - PromisesObjC
@@ -492,6 +537,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-geolocation:
     :path: "../node_modules/@react-native-community/geolocation"
+  react-native-kakao-share-link:
+    :path: "../node_modules/react-native-kakao-share-link"
   react-native-maps:
     :path: "../node_modules/react-native-maps"
   react-native-safe-area-context:
@@ -526,12 +573,15 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBDatabase:
     :path: "../node_modules/@react-native-firebase/database"
+  RNFBDynamicLinks:
+    :path: "../node_modules/@react-native-firebase/dynamic-links"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 60195509584153283780abdac5569feffb8f08cc
@@ -540,10 +590,14 @@ SPEC CHECKSUMS:
   FirebaseCore: fa80ad16a62d52f67274b5b88304c3a318bbf9a4
   FirebaseCoreInternal: c7cd505e2136811096b225ac388d6254a2622362
   FirebaseDatabase: c3ab8f695e48d4c4431f8406b58ebe543be185d9
+  FirebaseDynamicLinks: 99c501143953e925681a37aade96bb2db34b30ca
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
   hermes-engine: 38bfe887e456b33b697187570a08de33969f5db7
+  KakaoSDKCommon: 0912aa0c7db051ae8dc07a35395cf644f7728f95
+  KakaoSDKLink: fe6f2ca19092836f8af2a9d7fabe60fd67740104
+  KakaoSDKTemplate: 8bb288765bfc0195631da809b2d707f09495acdf
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
@@ -562,6 +616,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 9f7c9137605e72ca0343db4cea88006cb94856dd
   React-logger: 957e5dc96d9dbffc6e0f15e0ee4d2b42829ff207
   react-native-geolocation: 7383cbe9fa75b168bbbe40b566070fd0b44d30d6
+  react-native-kakao-share-link: 198508e0a6d44d891fdd9d2ddbbd2738a233c5b6
   react-native-maps: 7135a33610202745d08fdf151ce6b0d01952a99c
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
   React-perflogger: af8a3d31546077f42d729b949925cc4549f14def
@@ -579,6 +634,7 @@ SPEC CHECKSUMS:
   ReactCommon: 5f9a24e64c1c3e2b719014f07cb2acf628983000
   RNFBApp: dd22a306a31189e99126a35962498c83b06520ab
   RNFBDatabase: 092d98672c640241688cc9f30e80576b075e2ff6
+  RNFBDynamicLinks: 31246d22f0bcda1b3022b89c97483fc079cc3025
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   Yoga: 5ed1699acbba8863755998a4245daa200ff3817b
 

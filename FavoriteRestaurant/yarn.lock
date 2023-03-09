@@ -1711,6 +1711,13 @@
   "resolved" "https://registry.npmjs.org/@react-native-firebase/database/-/database-17.3.2.tgz"
   "version" "17.3.2"
 
+"@react-native-firebase/dynamic-links@^17.3.2":
+  "integrity" "sha512-iBANo9TFdVStxXjRw+EtwF3bCxEiLJzms1yyuYuqrSQb8bVOeD+ViJXbF4XAlzti04ut+L1kY3avEUV9IoCM5g=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/dynamic-links/-/dynamic-links-17.3.2.tgz"
+  "version" "17.3.2"
+  dependencies:
+    "@expo/config-plugins" "^5.0.4"
+
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
   "resolved" "https://registry.npmjs.org/@react-native/assets/-/assets-1.0.0.tgz"
@@ -6184,6 +6191,11 @@
   "integrity" "sha512-7S3pAuPaQJlhax6EZ4JMsDNpj05TfuzX9gPgWLrFfAIWIFLuJ6aDQYAZy2TEI9QJALPoWrj8LWaqP/DGYh14pw=="
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.15.tgz"
   "version" "0.71.15"
+
+"react-native-kakao-share-link@^1.0.6":
+  "integrity" "sha512-1jI6aIS1l6oZrc3kQ8OX0ehSvdyRosYcCzn7x3oJ/wqOy8DTeXvfsj3jexO6NdL3NfSQyNL81walRYFXhHlBfA=="
+  "resolved" "https://registry.npmjs.org/react-native-kakao-share-link/-/react-native-kakao-share-link-1.0.6.tgz"
+  "version" "1.0.6"
 
 "react-native-maps@^1.4.0":
   "integrity" "sha512-asP6oVx9uF4E9U22j40q0AcSJ4v3hPBPCg1kPdlbckGXGj+z8dwwdPkQi3hUpl94odlR//v60Sw6PAEYv8zSxw=="
