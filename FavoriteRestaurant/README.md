@@ -46,7 +46,7 @@ react-native-vector-icons를 사용하기 위해 [여기](https://github.com/obl
 
 node_modules → react-native-vector-icons → Fonts폴더를 ios 프로젝트에 붙여넣는다.
 
-프로젝트 폴더 > Info > 우클릭 > open as > source code > 다음내용작성
+프로젝트 폴더 > Info > 우클릭 > open as > source code > 다음내용을 작성한다.
 
 ```
 <key>UIAppFonts</key>
