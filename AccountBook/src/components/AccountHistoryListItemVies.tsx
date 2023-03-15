@@ -1,6 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import {AccountBookHistory} from '../data/AccountBookHistory';
+import {convertToDateString} from '../utils/DataUtils';
 import {Button} from './Button';
 import {Icon} from './Icons';
 import {RemoteImage} from './RemoteImage';
@@ -21,7 +22,7 @@ export const AccountHistoryListItemView: React.FC<{
           alignItems: 'center',
         }}>
         <Icon
-          name={props.item.type === '사용' ? 'remove-circle' : 'add-corcle'}
+          name={props.item.type === '사용' ? 'remove-circle' : 'add-circle'}
           size={24}
           color={props.item.type === '사용' ? 'red' : 'blue'}
         />
@@ -29,7 +30,7 @@ export const AccountHistoryListItemView: React.FC<{
           <Typography fontSize={16}>{props.item.comment}</Typography>
           <Spacer space={4} />
           <Typography fontSize={12}>
-            {props.item.createdAt.toString()}
+            {convertToDateString(props.item.createdAt)}
           </Typography>
         </View>
         {props.item.photoUrl !== null && (
