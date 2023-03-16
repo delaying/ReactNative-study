@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import SQLite from 'react-native-sqlite-storage';
+
 import {AccountHistoryListItemView} from '../components/AccountHistoryListItemVies';
 import {Button} from '../components/Button';
 import {Header} from '../components/Header/Header';
@@ -13,6 +15,22 @@ const now = new Date().getTime();
 export const MainScreen: React.FC = () => {
   const navigation = useRootNavigation();
   const safeAreaInset = useSafeAreaInsets();
+
+  useEffect(() => {
+    SQLite.openDatabase(
+      {
+        name: 'account_history.db',
+        createFromLocation: '~www/account_history.db',
+        location: 'default',
+      },
+      () => {
+        console.log('success');
+      },
+      () => {
+        console.log('failed');
+      },
+    );
+  }, []);
 
   const [list] = useState<AccountBookHistory[]>([
     {
