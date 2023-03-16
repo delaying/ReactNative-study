@@ -16,21 +16,21 @@ export const MainScreen: React.FC = () => {
   const navigation = useRootNavigation();
   const safeAreaInset = useSafeAreaInsets();
 
-  useEffect(() => {
-    SQLite.openDatabase(
-      {
-        name: 'account_history.db',
-        createFromLocation: '~www/account_history.db',
-        location: 'default',
-      },
-      () => {
-        console.log('success');
-      },
-      () => {
-        console.log('failed');
-      },
-    );
-  }, []);
+  // useEffect(() => {
+  //   SQLite.openDatabase(
+  //     {
+  //       name: 'account_history.db',
+  //       createFromLocation: '~www/account_history.db',
+  //       location: 'default',
+  //     },
+  //     () => {
+  //       console.log('success');
+  //     },
+  //     () => {
+  //       console.log('failed');
+  //     },
+  //   );
+  // }, []);
 
   const [list] = useState<AccountBookHistory[]>([
     {
@@ -38,6 +38,7 @@ export const MainScreen: React.FC = () => {
       type: '사용',
       price: 10000,
       comment: 'test_01',
+      date: now,
       createdAt: now,
       updatedAt: now,
       photoUrl: null,
@@ -47,6 +48,7 @@ export const MainScreen: React.FC = () => {
       type: '수입',
       price: 200000,
       comment: 'TEST_2',
+      date: now,
       createdAt: now,
       updatedAt: now,
       photoUrl:
@@ -58,6 +60,7 @@ export const MainScreen: React.FC = () => {
       type: '수입',
       price: 260000,
       comment: 'TEST_3',
+      date: now,
       createdAt: now,
       updatedAt: now,
       photoUrl:
