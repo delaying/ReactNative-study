@@ -4,6 +4,7 @@ import {Button} from '../components/Button';
 import {Header} from '../components/Header/Header';
 import {Icon} from '../components/Icons';
 import {MultiLineInput} from '../components/MultiLineInput';
+import {RemoteImage} from '../components/RemoteImage';
 import {SingleLineInput} from '../components/SingleLineInput';
 import {Spacer} from '../components/Spacer';
 import {Typography} from '../components/Typography';
@@ -59,7 +60,16 @@ export const AddUpdateScreen: React.FC = () => {
     }));
   }, []);
 
-  const onPressPhoto = useCallback(() => {}, []);
+  const onPressPhoto = useCallback(() => {
+    navigation.push('TakePhoto', {
+      onTakePhoto: url => {
+        setItem(prevState => ({
+          ...prevState,
+          photoUrl: url,
+        }));
+      },
+    });
+  }, [navigation]);
 
   const onPressCalendar = useCallback(() => {
     navigation.push('CalendarSelect', {
@@ -168,17 +178,26 @@ export const AddUpdateScreen: React.FC = () => {
           </View>
           <View style={{marginLeft: 24}}>
             <Button onPress={onPressPhoto}>
-              <View
-                style={{
-                  width: 100,
-                  height: 100,
-                  borderRadius: 12,
-                  backgroundColor: 'lightgray',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                <Icon name="add" size={24} color="gray" />
-              </View>
+              {item.photoUrl ? (
+                <RemoteImage
+                  url={item.photoUrl}
+                  width={100}
+                  height={100}
+                  style={{borderRadius: 12}}
+                />
+              ) : (
+                <View
+                  style={{
+                    width: 100,
+                    height: 100,
+                    borderRadius: 12,
+                    backgroundColor: 'lightgray',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                  <Icon name="add" size={24} color="gray" />
+                </View>
+              )}
             </Button>
           </View>
         </View>

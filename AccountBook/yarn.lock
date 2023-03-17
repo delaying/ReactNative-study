@@ -1428,6 +1428,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@react-native-camera-roll/camera-roll@^5.3.1":
+  "integrity" "sha512-2XKMkb/pLBC6vYkNh+bJ4UEj49V2ZSyWFHmaxsUJU9beLo1QbM3XJnySV6F1uv7aC+I2RBlDuAusCqNiTQiCOw=="
+  "resolved" "https://registry.npmjs.org/@react-native-camera-roll/camera-roll/-/camera-roll-5.3.1.tgz"
+  "version" "5.3.1"
+
 "@react-native-community/cli-clean@^10.1.1":
   "integrity" "sha512-iNsrjzjIRv9yb5y309SWJ8NDHdwYtnCpmxZouQDyOljUdC9MwdZ4ChbtA4rwQyAwgOVfS9F/j56ML3Cslmvrxg=="
   "resolved" "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-10.1.1.tgz"
@@ -5998,7 +6003,12 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@>= 0.30.0", "react-native@>=0.14.0", "react-native@0.71.4":
+"react-native-vision-camera@^2.15.4":
+  "integrity" "sha512-SJXSWH1pu4V3Kj4UuX/vSgOxc9d5wb5+nHqBHd+5iUtVyVLEp0F6Jbbaha7tDoU+kUBwonhlwr2o8oV6NZ7Ibg=="
+  "resolved" "https://registry.npmjs.org/react-native-vision-camera/-/react-native-vision-camera-2.15.4.tgz"
+  "version" "2.15.4"
+
+"react-native@*", "react-native@>= 0.30.0", "react-native@>=0.14.0", "react-native@>=0.59", "react-native@0.71.4":
   "integrity" "sha512-3hSYqvWrOdKhpV3HpEKp1/CkWx8Sr/N/miCrmUIAsVTSJUR7JW0VvIsrV9urDhUj/s6v2WF4n7qIEEJsmTCrPw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.71.4.tgz"
   "version" "0.71.4"
