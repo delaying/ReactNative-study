@@ -17,7 +17,7 @@ export const AddUpdateScreen: React.FC = () => {
   const navigation = useRootNavigation<'Add' | 'Update'>();
   const routes = useRootRoute<'Add' | 'Update'>();
 
-  const {insertItem} = useAccountBookHistoryItem();
+  const {insertItem, updateItem} = useAccountBookHistoryItem();
 
   const [item, setItem] = useState<AccountBookHistory>(
     routes.params?.item ?? {
@@ -86,7 +86,14 @@ export const AddUpdateScreen: React.FC = () => {
     if (routes.name === 'Add') {
       insertItem(item).then(() => navigation.goBack());
     }
-  }, [insertItem, item, routes.name, navigation]);
+
+    if (routes.name === 'Update') {
+      updateItem(item).then(item => {
+        routes.params?.onChangeData(item);
+        navigation.goBack();
+      });
+    }
+  }, [insertItem, item, routes.name, routes.params, navigation, updateItem]);
 
   return (
     <View style={{flex: 1}}>

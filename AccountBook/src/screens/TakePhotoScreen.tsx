@@ -6,7 +6,6 @@ import {CameraRoll} from '@react-native-camera-roll/camera-roll';
 import {Header} from '../components/Header/Header';
 import {useRootNavigation, useRootRoute} from '../navigations/RootNavigation';
 import {Button} from '../components/Button';
-import {RemoteImage} from '../components/RemoteImage';
 
 export const TakePhotoScreen: React.FC = () => {
   const navigation = useRootNavigation<'TakePhoto'>();

@@ -27,7 +27,9 @@ export const AccountHistoryListItemView: React.FC<{
           color={props.item.type === '사용' ? 'red' : 'blue'}
         />
         <View style={{flex: 1, marginLeft: 12}}>
-          <Typography fontSize={16}>{props.item.comment}</Typography>
+          <Typography fontSize={16}>
+            {props.item.comment} | {props.item.price.toString()}
+          </Typography>
           <Spacer space={4} />
           <Typography fontSize={12}>
             {convertToDateString(props.item.createdAt)}

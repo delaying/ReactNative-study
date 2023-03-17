@@ -5,7 +5,7 @@ export const Typography: React.FC<{
   color?: string;
   fontSize?: number;
   numberOfLines?: number;
-  children: React.ReactNode | string;
+  children: React.ReactElement | string | string[] | React.ReactElement[];
 }> = props => (
   <RNText
     style={{
