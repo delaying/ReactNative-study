@@ -29,7 +29,7 @@ export const SingleLineInput: React.FC<{
         onChangeText={props.onChangeText}
         placeholder={props.placeholder}
         onSubmitEditing={props.onSubmitEditing}
-        style={{fontSize: props.fontSize ?? 20}}
+        style={{fontSize: props.fontSize ?? 20, paddingVertical: 0}}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
       />

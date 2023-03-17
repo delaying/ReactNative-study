@@ -1,0 +1,3 @@
+{
+  "cmake.sourceDirectory": "${workspaceFolder}/AccountBook/ios/Pods/Flipper-Boost-iOSX/boost/safe_numerics"
+}
