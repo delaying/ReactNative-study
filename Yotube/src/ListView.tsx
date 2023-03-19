@@ -1,39 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import {FlatList} from 'react-native';
 import {ListItemView} from './ListItemView';
-import {TypeListItem} from './TypeListItem';
+import {useYotubeData} from './useYotubeData';
 
 export const ListView: React.FC = () => {
-  const [list] = useState<TypeListItem[]>([
-    {
-      title: 'title_01',
-      thumbnail:
-        'https://docs.expo.dev/static/images/tutorial/background-image.png',
-      publishedAd: '2023-1-12',
-      viewCount: 111,
-      channelTitle: 'channel_01',
-    },
-    {
-      title: 'title_02',
-      thumbnail:
-        'https://docs.expo.dev/static/images/tutorial/background-image.png',
-      publishedAd: '2023-1-22',
-      viewCount: 311,
-      channelTitle: 'channel_02',
-    },
-    {
-      title: 'title_03',
-      thumbnail:
-        'https://docs.expo.dev/static/images/tutorial/background-image.png',
-      publishedAd: '2023-1-01',
-      viewCount: 1011,
-      channelTitle: 'channel_03',
-    },
-  ]);
+  const {data, loadData} = useYotubeData();
 
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
   return (
     <FlatList
-      data={list}
+      data={data}
       renderItem={({item}) => <ListItemView item={item} />}
     />
   );
