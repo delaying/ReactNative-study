@@ -4,7 +4,7 @@ import {ListItemView} from './ListItemView';
 import {useYotubeData} from './useYotubeData';
 
 export const ListView: React.FC = () => {
-  const {data, loadData} = useYotubeData();
+  const {data, loadData, loadMoreData} = useYotubeData();
 
   useEffect(() => {
     loadData();
@@ -13,6 +13,8 @@ export const ListView: React.FC = () => {
     <FlatList
       data={data}
       renderItem={({item}) => <ListItemView item={item} />}
+      onEndReached={loadMoreData}
+      onEndReachedThreshold={0.1}
     />
   );
 };
