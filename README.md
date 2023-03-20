@@ -25,7 +25,7 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 - [맛집 공유 앱](https://github.com/delaying/ReactNative-study/tree/main/FavoriteRestaurant#맛집-공유-앱)
 - [가계부 앱](https://github.com/delaying/ReactNative-study/tree/main/AccountBook#가계부-앱)
 - [요튜브 클론 코딩](https://github.com/delaying/ReactNative-study/tree/main/Yotube#요튜브-클론-앱)
-- Love Dog
+- [Love Dog](https://github.com/delaying/ReactNative-study/tree/main/LoveDog#Love-Dog)
 
 ## React Native Animation 프로젝트
 
