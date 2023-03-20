@@ -8,7 +8,9 @@
 
 ---
 
-- [](#)
+- [youtube data api](#youtube-data-api)
+- [axios](#axios)
+- [infinity scroll](#infinity-scroll)
 
 ---
 
@@ -93,7 +95,7 @@ xcode와 android studio를 설치하거나, 직접 모바일 기기를 연결하
 
 - page 처리
   - 특정 페이지에 해당하는 값들을 불러오는 방식 ( ex.게시판)
-  - 게시물 이동과 게시물추가에따른 에러가 발생할 수 있음
+  - 게시물 이동과 게시물추가에따른 에러가 발생할 수 있다.
 - cursor 처리
   - 특정 아이템을 기준으로 그 뒤에 있는 아이템을 불러오는 방식
 
