@@ -1,12 +1,42 @@
-import React from 'react';
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+} from '@react-native-google-signin/google-signin';
+import React, {useCallback} from 'react';
 import {View} from 'react-native';
-import {Button} from '../components/Button';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import auth from '@react-native-firebase/auth';
+
 import {Header} from '../components/Header/Header';
-import {Typography} from '../components/Typography';
 import {useRootNavigation} from '../navigation/RootStackNavigation';
 
 export const IntroScreen: React.FC = () => {
   const rootNavigation = useRootNavigation<'Intro'>();
+  const safeArea = useSafeAreaInsets();
+
+  const onPressGoogleSignin = useCallback(async () => {
+    const isSignIn = await GoogleSignin.isSignedIn();
+    if (isSignIn) {
+      await GoogleSignin.signOut();
+    }
+
+    const result = await GoogleSignin.signIn();
+    const googleCredential = auth.GoogleAuthProvider.credential(result.idToken);
+    const authResult = await auth().signInWithCredential(googleCredential);
+
+    rootNavigation.push('Signup', {
+      screen: 'InputEmail',
+      params: {
+        preInput: {
+          email: result.user.email,
+          name: result.user.name ?? 'Unknown',
+          profileImage: result.user.photo ?? '',
+        },
+        uid: authResult.user.uid,
+      },
+    });
+  }, [rootNavigation]);
+
   return (
     <View style={{flex: 1}}>
       <Header>
@@ -16,31 +46,10 @@ export const IntroScreen: React.FC = () => {
         style={{
           flex: 1,
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'flex-end',
+          paddingBottom: 32 + safeArea.bottom,
         }}>
-        <Button
-          onPress={() => {
-            rootNavigation.push('Signup', {
-              screen: 'InputEmail',
-              params: {
-                uid: '',
-                preInput: {
-                  email: 'test@test.com',
-                  name: 'test',
-                  profileImage: '',
-                },
-              },
-            });
-          }}>
-          <Typography fontSize={16}>회원가입 화면으로 이동하기</Typography>
-        </Button>
-
-        <Button
-          onPress={() => {
-            rootNavigation.replace('Main');
-          }}>
-          <Typography fontSize={16}>메인 화면으로 이동하기</Typography>
-        </Button>
+        <GoogleSigninButton onPress={onPressGoogleSignin} />
       </View>
     </View>
   );
