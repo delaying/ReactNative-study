@@ -11,6 +11,8 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {RootStackNavigation} from './src/navigation/RootStackNavigation';
 
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import {Provider} from 'react-redux';
+import store from './src/store';
 
 GoogleSignin.configure({
   webClientId:
@@ -20,9 +22,11 @@ GoogleSignin.configure({
 function App(): JSX.Element {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <RootStackNavigation />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <RootStackNavigation />
+        </NavigationContainer>
+      </Provider>
     </SafeAreaProvider>
   );
 }
