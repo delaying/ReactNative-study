@@ -576,6 +576,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXFJCP6359;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LoveDog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -588,7 +589,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lovedog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovedog.ld;
 				PRODUCT_NAME = LoveDog;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -603,6 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXFJCP6359;
 				INFOPLIST_FILE = LoveDog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -614,7 +616,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lovedog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovedog.ld;
 				PRODUCT_NAME = LoveDog;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

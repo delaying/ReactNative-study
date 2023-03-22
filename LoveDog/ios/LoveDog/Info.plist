@@ -46,8 +46,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>프로필 사진을 설정하기 위해 갤러리 이미지가 필요합니다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>프로필 사진을 설정하기 위해 갤러리 이미지가 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>

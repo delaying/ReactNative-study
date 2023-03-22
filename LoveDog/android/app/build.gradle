@@ -96,6 +96,7 @@ android {
 
     namespace "com.lovedog"
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.lovedog"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
