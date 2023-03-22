@@ -1717,6 +1717,16 @@
     "@expo/config-plugins" "^5.0.4"
     "plist" "^3.0.5"
 
+"@react-native-firebase/database@^17.3.2":
+  "integrity" "sha512-9z14PZ4bxBNBIPzZP8W3jXRo0xTG+AMlZPiWW2AlGbRqSlkngyEeUW+FXgw33NWouJZvxkbBEd0GynpgOHS5pg=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/database/-/database-17.3.2.tgz"
+  "version" "17.3.2"
+
+"@react-native-firebase/storage@^17.3.2":
+  "integrity" "sha512-Pojwd5SuM8lvJBDfVV9ylyTOb8bwildhdAetLgyIdvyVwE9QqzpZoOebb283ceJ0h6OdznHiR66JJStcyclUwg=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/storage/-/storage-17.3.2.tgz"
+  "version" "17.3.2"
+
 "@react-native-google-signin/google-signin@^9.0.2":
   "integrity" "sha512-oTD0ZT6ZSH7CZjM1i6hR/gFAXv9As7nxhN99XGliNxf6SChZcQRwGeaz1DjoYrWExWDVX00EH1Per3dMjhAWkQ=="
   "resolved" "https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-9.0.2.tgz"
