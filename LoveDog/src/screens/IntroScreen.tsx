@@ -10,9 +10,13 @@ import database from '@react-native-firebase/database';
 
 import {Header} from '../components/Header/Header';
 import {useRootNavigation} from '../navigation/RootStackNavigation';
+import {useDispatch} from 'react-redux';
+import {setUser} from '../actions/user';
 
 export const IntroScreen: React.FC = () => {
   const rootNavigation = useRootNavigation<'Intro'>();
+  const dispatch = useDispatch();
+
   const safeArea = useSafeAreaInsets();
   const [visibleGoogleSignInBtn, setVisibleGoogleSignInBtn] = useState(true);
 
@@ -39,10 +43,22 @@ export const IntroScreen: React.FC = () => {
       lastLoginAt: currentTime.toISOString(),
     });
 
+    const userInfo = await reference
+      .once('value')
+      .then(snapshot => snapshot.val());
+    dispatch(
+      setUser({
+        uid: uid,
+        userEmail: userInfo.email,
+        userName: userInfo.name,
+        profileImage: userInfo.profile,
+      }),
+    );
+
     rootNavigation.reset({
       routes: [{name: 'Main'}],
     });
-  }, [rootNavigation]);
+  }, [rootNavigation, dispatch]);
 
   const onPressGoogleSignin = useCallback(async () => {
     const isSignIn = await GoogleSignin.isSignedIn();

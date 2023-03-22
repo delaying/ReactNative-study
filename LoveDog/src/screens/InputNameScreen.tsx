@@ -18,6 +18,8 @@ import {
   useSignupRoute,
 } from '../navigation/SignupNavigation';
 import {uploadFile} from '../utils/FileUtils';
+import {setUser} from '../actions/user';
+import {useDispatch} from 'react-redux';
 
 export const InputNameScreen: React.FC = () => {
   const rootNavigation = useRootNavigation<'Signup'>();
@@ -25,6 +27,7 @@ export const InputNameScreen: React.FC = () => {
   const routes = useSignupRoute<'InputName'>();
   const safeArea = useSafeAreaInsets();
   const actionSheetRef = useRef<ActionSheet>(null);
+  const dispatch = useDispatch();
 
   const [isLoading, setIsLoading] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<{uri: string} | null>(
@@ -62,11 +65,24 @@ export const InputNameScreen: React.FC = () => {
       lastLoginAt: currentTime.toISOString(),
     });
 
+    const userInfo = await reference
+      .once('value')
+      .then(snapshot => snapshot.val());
+    dispatch(
+      setUser({
+        uid: routes.params.uid,
+        userEmail: userInfo.email,
+        userName: userInfo.name,
+        profileImage: userInfo.profile,
+      }),
+    );
+
     rootNavigation.reset({
       routes: [{name: 'Main'}],
     });
     setIsLoading(false);
   }, [
+    dispatch,
     inputName,
     profileImage,
     rootNavigation,
