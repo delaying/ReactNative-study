@@ -13,6 +13,7 @@ import {RootStackNavigation} from './src/navigation/RootStackNavigation';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Provider} from 'react-redux';
 import store from './src/store';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 GoogleSignin.configure({
   webClientId:
@@ -23,9 +24,11 @@ function App(): JSX.Element {
   return (
     <SafeAreaProvider>
       <Provider store={store}>
-        <NavigationContainer>
-          <RootStackNavigation />
-        </NavigationContainer>
+        <GestureHandlerRootView style={{flex: 1}}>
+          <NavigationContainer>
+            <RootStackNavigation />
+          </NavigationContainer>
+        </GestureHandlerRootView>
       </Provider>
     </SafeAreaProvider>
   );

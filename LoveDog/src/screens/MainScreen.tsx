@@ -1,5 +1,12 @@
 import React, {useCallback, useEffect} from 'react';
 import {useWindowDimensions, View} from 'react-native';
+import {Gesture, GestureDetector} from 'react-native-gesture-handler';
+import Animated, {
+  interpolate,
+  runOnJS,
+  useAnimatedStyle,
+  useSharedValue,
+} from 'react-native-reanimated';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDog, likeDog, TypeDogDispatch} from '../actions/dog';
 import {Button} from '../components/Button';
@@ -24,6 +31,7 @@ export const MainScreen: React.FC = () => {
       return;
     }
     dispatch(likeDog(dog));
+    dispatch(getDog());
   }, [dispatch, dog]);
   const onPressNotLike = useCallback(() => {
     dispatch(getDog());
@@ -32,6 +40,62 @@ export const MainScreen: React.FC = () => {
   useEffect(() => {
     dispatch(getDog());
   }, [dispatch]);
+
+  const start = useSharedValue({x: 0, y: 0});
+  const offset = useSharedValue({x: 0, y: 0});
+
+  const gesture = Gesture.Pan()
+    .runOnJS(true)
+    .onBegin(() => {})
+    .onUpdate(event => {
+      offset.value = {
+        x: event.translationX + start.value.x,
+        y: offset.value.y,
+      };
+    })
+
+    .onFinalize(() => {
+      if (offset.value.x < -150) {
+        //왼쪽으로 넘어간 상태
+        runOnJS(onPressLike)();
+      }
+      if (offset.value.x > 150) {
+        //오른쪽으로 넘어간 상태
+        runOnJS(onPressNotLike)();
+      }
+      offset.value = {
+        x: 0,
+        y: 0,
+      };
+    });
+
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          translateX: interpolate(
+            offset.value.x,
+            [-200, 0, 200],
+            [-100, 0, 100],
+          ),
+        },
+        {
+          translateY: interpolate(
+            offset.value.x,
+            [-200, 0, 200],
+            [-50, 0, -50],
+          ),
+        },
+        {
+          rotate: `${interpolate(
+            offset.value.x,
+            [-200, 0, 200],
+            [30, 0, -30],
+          )}deg`,
+        },
+      ],
+    };
+  });
 
   return (
     <View style={{flex: 1}}>
@@ -42,13 +106,19 @@ export const MainScreen: React.FC = () => {
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         {dog !== null && (
           <View style={{width: width * 0.85}}>
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <RemoteImage
-                url={dog.photoUrl}
-                width={width * 0.7}
-                height={width * 0.7}
-              />
-            </View>
+            <GestureDetector gesture={gesture}>
+              <Animated.View
+                style={{alignItems: 'center', justifyContent: 'center'}}>
+                <Animated.View style={animatedStyle}>
+                  <RemoteImage
+                    url={dog.photoUrl}
+                    width={width * 0.7}
+                    height={width * 0.7}
+                  />
+                </Animated.View>
+              </Animated.View>
+            </GestureDetector>
+
             <Spacer space={64} />
 
             <View style={{flexDirection: 'row'}}>
