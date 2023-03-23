@@ -70,6 +70,35 @@ export const IntroScreen: React.FC = () => {
     const googleCredential = auth.GoogleAuthProvider.credential(result.idToken);
     const authResult = await auth().signInWithCredential(googleCredential);
 
+    const uid = authResult.user.uid;
+
+    const currentTime = new Date();
+    const reference = database().ref(`member/${uid}`);
+    const user = await reference.once('value').then(snapshot => snapshot.val());
+
+    if (user !== null) {
+      await reference.update({
+        lastLoginAt: currentTime.toISOString(),
+      });
+
+      const userInfo = await reference
+        .once('value')
+        .then(snapshot => snapshot.val());
+      dispatch(
+        setUser({
+          uid: uid,
+          userEmail: userInfo.email,
+          userName: userInfo.name,
+          profileImage: userInfo.profile,
+        }),
+      );
+
+      rootNavigation.reset({
+        routes: [{name: 'Main'}],
+      });
+
+      return;
+    }
     rootNavigation.push('Signup', {
       screen: 'InputEmail',
       params: {
@@ -81,7 +110,7 @@ export const IntroScreen: React.FC = () => {
         uid: authResult.user.uid,
       },
     });
-  }, [rootNavigation]);
+  }, [rootNavigation, dispatch]);
 
   useEffect(() => {
     checkUserLoginOnce();

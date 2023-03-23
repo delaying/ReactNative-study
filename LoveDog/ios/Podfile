@@ -44,6 +44,7 @@ target 'LoveDog' do
 #    :flipper_configuration => flipper_config,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
+   
   )
 
   target 'LoveDogTests' do
@@ -60,4 +61,6 @@ target 'LoveDog' do
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
+  
+
 end

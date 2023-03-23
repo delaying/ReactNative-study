@@ -9,9 +9,11 @@ import {
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {HistoryListScreen} from '../screens/HistoryListScreen';
 import {IntroScreen} from '../screens/IntroScreen';
 import {TakePhotoScreen} from '../screens/TakePhotoScreen';
+import {TypeRootReducer} from '../store';
 import {BottomTabNavigation} from './BottomTabNavigation';
 import {SignupNavigation, TypeSignupNavigation} from './SignupNavigation';
 
@@ -23,15 +25,23 @@ type TypeRootStackNavigationParams = {
   TakePhoto: {onTakePhoto: (uri: string) => void};
 };
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<TypeRootStackNavigationParams>();
 
 export const RootStackNavigation: React.FC = () => {
+  // 로그인 했을 경우에만 볼 수 있는 화면 설정
+  const isSignIn = useSelector<TypeRootReducer, boolean>(
+    state => state.user.user !== null,
+  );
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Intro" component={IntroScreen} />
-      <Stack.Screen name="Signup" component={SignupNavigation} />
-      <Stack.Screen name="Main" component={BottomTabNavigation} />
-      <Stack.Screen name="HistoryList" component={HistoryListScreen} />
+      {!isSignIn && <Stack.Screen name="Signup" component={SignupNavigation} />}
+      {isSignIn && (
+        <>
+          <Stack.Screen name="Main" component={BottomTabNavigation} />
+          <Stack.Screen name="HistoryList" component={HistoryListScreen} />
+        </>
+      )}
       <Stack.Screen name="TakePhoto" component={TakePhotoScreen} />
     </Stack.Navigator>
   );
