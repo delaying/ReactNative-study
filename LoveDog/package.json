@@ -25,6 +25,7 @@
     "react-native": "0.71.4",
     "react-native-actionsheet": "^2.4.2",
     "react-native-gesture-handler": "^2.9.0",
+    "react-native-iap": "^12.10.2",
     "react-native-image-crop-picker": "^0.39.0",
     "react-native-image-viewing": "^0.2.2",
     "react-native-reanimated": "^3.0.2",

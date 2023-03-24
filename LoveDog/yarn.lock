@@ -1139,10 +1139,45 @@
     "xcode" "^3.0.1"
     "xml2js" "0.4.23"
 
+"@expo/config-plugins@^6.0.1":
+  "integrity" "sha512-6mqZutxeibXFeqFfoZApFUEH2n1RxGXYMHCdJrDj4eXDBBFZ3aJ0XBoroZcHHHvfRieEsf54vNyJoWp7JZGj8g=="
+  "resolved" "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-6.0.1.tgz"
+  "version" "6.0.1"
+  dependencies:
+    "@expo/config-types" "^48.0.0"
+    "@expo/json-file" "~8.2.37"
+    "@expo/plist" "^0.0.20"
+    "@expo/sdk-runtime-versions" "^1.0.0"
+    "@react-native/normalize-color" "^2.0.0"
+    "chalk" "^4.1.2"
+    "debug" "^4.3.1"
+    "find-up" "~5.0.0"
+    "getenv" "^1.0.0"
+    "glob" "7.1.6"
+    "resolve-from" "^5.0.0"
+    "semver" "^7.3.5"
+    "slash" "^3.0.0"
+    "xcode" "^3.0.1"
+    "xml2js" "0.4.23"
+
 "@expo/config-types@^47.0.0":
   "integrity" "sha512-r0pWfuhkv7KIcXMUiNACJmJKKwlTBGMw9VZHNdppS8/0Nve8HZMTkNRFQzTHW1uH3pBj8jEXpyw/2vSWDHex9g=="
   "resolved" "https://registry.npmjs.org/@expo/config-types/-/config-types-47.0.0.tgz"
   "version" "47.0.0"
+
+"@expo/config-types@^48.0.0":
+  "integrity" "sha512-DwyV4jTy/+cLzXGAo1xftS6mVlSiLIWZjl9DjTCLPFVgNYQxnh7htPilRv4rBhiNs7KaznWqKU70+4zQoKVT9A=="
+  "resolved" "https://registry.npmjs.org/@expo/config-types/-/config-types-48.0.0.tgz"
+  "version" "48.0.0"
+
+"@expo/json-file@~8.2.37":
+  "integrity" "sha512-YaH6rVg11JoTS2P6LsW7ybS2CULjf40AbnAHw2F1eDPuheprNjARZMnyHFPkKv7GuxCy+B9GPcbOKgc4cgA80Q=="
+  "resolved" "https://registry.npmjs.org/@expo/json-file/-/json-file-8.2.37.tgz"
+  "version" "8.2.37"
+  dependencies:
+    "@babel/code-frame" "~7.10.4"
+    "json5" "^2.2.2"
+    "write-file-atomic" "^2.3.0"
 
 "@expo/json-file@8.2.36":
   "integrity" "sha512-tOZfTiIFA5KmMpdW9KF7bc6CFiGjb0xnbieJhTGlHrLL+ps2G0OkqmuZ3pFEXBOMnJYUVpnSy++52LFxvpa5ZQ=="
@@ -1152,6 +1187,15 @@
     "@babel/code-frame" "~7.10.4"
     "json5" "^1.0.1"
     "write-file-atomic" "^2.3.0"
+
+"@expo/plist@^0.0.20":
+  "integrity" "sha512-UXQ4LXCfTZ580LDHGJ5q62jSTwJFFJ1GqBu8duQMThiHKWbMJ+gajJh6rsB6EJ3aLUr9wcauxneL5LVRFxwBEA=="
+  "resolved" "https://registry.npmjs.org/@expo/plist/-/plist-0.0.20.tgz"
+  "version" "0.0.20"
+  dependencies:
+    "@xmldom/xmldom" "~0.7.7"
+    "base64-js" "^1.2.3"
+    "xmlbuilder" "^14.0.0"
 
 "@expo/plist@0.0.18":
   "integrity" "sha512-+48gRqUiz65R21CZ/IXa7RNBXgAI/uPSdvJqoN9x1hfL44DNbUoWHgHiEXTx7XelcATpDwNTz6sHLfy0iNqf+w=="
@@ -2106,7 +2150,7 @@
     "@typescript-eslint/types" "5.55.0"
     "eslint-visitor-keys" "^3.3.0"
 
-"@xmldom/xmldom@~0.7.0":
+"@xmldom/xmldom@~0.7.0", "@xmldom/xmldom@~0.7.7":
   "integrity" "sha512-yceMpm/xd4W2a85iqZyO09gTnHvXF6pyiWjD2jcOJs7hRoZtNNOO1eJlhHj1ixA+xip2hOyGn+LgcvLCMo5zXA=="
   "resolved" "https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.7.9.tgz"
   "version" "0.7.9"
@@ -6239,6 +6283,13 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.16.tgz"
   "version" "0.71.16"
 
+"react-native-iap@^12.10.2":
+  "integrity" "sha512-wANstWPympMPu7SVLOwdOKZ3mXMtkp/HnED0E+aUY3898g45QjGFcNmHluQhGHSY/Q/pTVeGF1cwsIRUDmAUwQ=="
+  "resolved" "https://registry.npmjs.org/react-native-iap/-/react-native-iap-12.10.2.tgz"
+  "version" "12.10.2"
+  dependencies:
+    "@expo/config-plugins" "^6.0.1"
+
 "react-native-image-crop-picker@^0.39.0":
   "integrity" "sha512-4aANbQMrmU6zN/4b0rVBA7SbaZ3aa5JESm3Xk751sINybZMt1yz/9h95LkO7U0pbslHDo3ofXjG75PmQRP6a/w=="
   "resolved" "https://registry.npmjs.org/react-native-image-crop-picker/-/react-native-image-crop-picker-0.39.0.tgz"
@@ -6288,7 +6339,7 @@
   "resolved" "https://registry.npmjs.org/react-native-vision-camera/-/react-native-vision-camera-2.15.4.tgz"
   "version" "2.15.4"
 
-"react-native@*", "react-native@>=0.40.0", "react-native@>=0.59", "react-native@>=0.61.3", "react-native@0.71.4":
+"react-native@*", "react-native@>=0.40.0", "react-native@>=0.59", "react-native@>=0.61.3", "react-native@>=0.65.1", "react-native@0.71.4":
   "integrity" "sha512-3hSYqvWrOdKhpV3HpEKp1/CkWx8Sr/N/miCrmUIAsVTSJUR7JW0VvIsrV9urDhUj/s6v2WF4n7qIEEJsmTCrPw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.71.4.tgz"
   "version" "0.71.4"
@@ -6362,7 +6413,7 @@
     "react-shallow-renderer" "^16.15.0"
     "scheduler" "^0.23.0"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>=15.4.0", "react@>=16.11.0", "react@>=17.0.0", "react@18.2.0":
+"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>=15.4.0", "react@>=16.11.0", "react@>=16.13.1", "react@>=17.0.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"

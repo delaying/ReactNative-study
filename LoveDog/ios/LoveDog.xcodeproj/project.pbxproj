@@ -28,6 +28,7 @@
 		2E1BEF9C29C98CA80017E47F /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1BEF8C29C98CA80017E47F /* SimpleLineIcons.ttf */; };
 		2E1BEF9D29C98CA80017E47F /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1BEF8D29C98CA80017E47F /* MaterialIcons.ttf */; };
 		2E1BEF9F29C995240017E47F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E1BEF9E29C995240017E47F /* GoogleService-Info.plist */; };
+		2EC1765929CD339E006F9079 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EC1765829CD339E006F9079 /* StoreKit.framework */; };
 		618C2F161B62EA18E825529D /* Pods_LoveDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AA1F12BAA025408AF27DC8 /* Pods_LoveDog.framework */; };
 		64CC9BB9AE17CB5BD40BADBD /* Pods_LoveDog_LoveDogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81A3AD17939D28FF4768ABD /* Pods_LoveDog_LoveDogTests.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -53,6 +54,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = LoveDog/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LoveDog/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LoveDog/main.m; sourceTree = "<group>"; };
+		2E0E753829CC256D00C91E41 /* LoveDogDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = LoveDogDebug.entitlements; path = LoveDog/LoveDogDebug.entitlements; sourceTree = "<group>"; };
+		2E0E753929CC30E400C91E41 /* LoveDog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = LoveDog.entitlements; path = LoveDog/LoveDog.entitlements; sourceTree = "<group>"; };
 		2E1BEF7E29C98CA80017E47F /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		2E1BEF7F29C98CA80017E47F /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		2E1BEF8029C98CA80017E47F /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		2E1BEF8C29C98CA80017E47F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		2E1BEF8D29C98CA80017E47F /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		2E1BEF9E29C995240017E47F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2EC1765829CD339E006F9079 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3B4392A12AC88292D35C810B /* Pods-LoveDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveDog.debug.xcconfig"; path = "Target Support Files/Pods-LoveDog/Pods-LoveDog.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-LoveDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveDog.release.xcconfig"; path = "Target Support Files/Pods-LoveDog/Pods-LoveDog.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-LoveDog-LoveDogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveDog-LoveDogTests.debug.xcconfig"; path = "Target Support Files/Pods-LoveDog-LoveDogTests/Pods-LoveDog-LoveDogTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				618C2F161B62EA18E825529D /* Pods_LoveDog.framework in Frameworks */,
+				2EC1765929CD339E006F9079 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +125,8 @@
 		13B07FAE1A68108700A75B9A /* LoveDog */ = {
 			isa = PBXGroup;
 			children = (
+				2E0E753929CC30E400C91E41 /* LoveDog.entitlements */,
+				2E0E753829CC256D00C91E41 /* LoveDogDebug.entitlements */,
 				2E1BEF9E29C995240017E47F /* GoogleService-Info.plist */,
 				2E1BEF7D29C98CA80017E47F /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -135,6 +142,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EC1765829CD339E006F9079 /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				82AA1F12BAA025408AF27DC8 /* Pods_LoveDog.framework */,
 				A81A3AD17939D28FF4768ABD /* Pods_LoveDog_LoveDogTests.framework */,
@@ -523,6 +531,7 @@
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-LoveDog-LoveDogTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SXFJCP6359;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -551,6 +560,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = SXFJCP6359;
 				INFOPLIST_FILE = LoveDogTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -575,10 +585,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LoveDog/LoveDogDebug.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SXFJCP6359;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LoveDog/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,9 +615,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LoveDog/LoveDog.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SXFJCP6359;
 				INFOPLIST_FILE = LoveDog/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
