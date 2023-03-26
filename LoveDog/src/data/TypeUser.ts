@@ -3,4 +3,5 @@ export type TypeUser = {
   userName: string;
   userEmail: string;
   profileImage: string;
+  availableLikeCount: number;
 };

@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect} from 'react';
-import {useWindowDimensions, View} from 'react-native';
+import {Alert, useWindowDimensions, View} from 'react-native';
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
+import {Purchase, useIAP} from 'react-native-iap';
 import Animated, {
   interpolate,
   runOnJS,
@@ -9,6 +10,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDog, likeDog, TypeDogDispatch} from '../actions/dog';
+import {userPurchaseItem} from '../actions/user';
 import {Button} from '../components/Button';
 import {Header} from '../components/Header/Header';
 import {Icon} from '../components/Icons';
@@ -25,14 +27,79 @@ export const MainScreen: React.FC = () => {
   );
 
   const dispatch = useDispatch<TypeDogDispatch>();
+  const {
+    requestPurchase,
+    getProducts,
+    getAvailablePurchases,
+    currentPurchase,
+    finishTransaction,
+  } = useIAP();
 
-  const onPressLike = useCallback(() => {
+  const onPressPurchaseItem = useCallback(async () => {
+    await getAvailablePurchases();
+
+    const productList = await getProducts({
+      skus: ['com.lovedog.product.5'],
+    });
+
+    try {
+      await requestPurchase({skus: ['com.lovedog.product.5']});
+    } catch (ex) {
+      console.error(ex);
+    }
+  }, [getAvailablePurchases, getProducts, requestPurchase]);
+
+  const userPurchasedItem = useCallback(
+    async (purchase: Purchase) => {
+      try {
+        await dispatch(userPurchaseItem());
+
+        finishTransaction({
+          purchase: purchase,
+          isConsumable: true,
+        });
+      } catch (ex) {}
+    },
+    [finishTransaction],
+  );
+
+  useEffect(() => {
+    if (currentPurchase) {
+      userPurchasedItem(currentPurchase);
+    }
+  }, [currentPurchase, userPurchasedItem]);
+
+  const onPressLike = useCallback(async () => {
     if (dog === null) {
       return;
     }
-    dispatch(likeDog(dog));
-    dispatch(getDog());
+
+    try {
+      await dispatch(likeDog(dog));
+      dispatch(getDog());
+    } catch (ex) {
+      console.error(ex);
+
+      const error = ex as Error;
+
+      if (error.message === 'Like Today Count is Over') {
+        Alert.alert(
+          '구매가 필요합니다',
+          '더 많은 강아지 사진을 좋아요하려면 구매를 해주세요',
+          [
+            {
+              text: '구매하기',
+              onPress: onPressPurchaseItem,
+            },
+            {
+              text: '다음에',
+            },
+          ],
+        );
+      }
+    }
   }, [dispatch, dog]);
+
   const onPressNotLike = useCallback(() => {
     dispatch(getDog());
   }, [dispatch]);

@@ -35,13 +35,26 @@ export const IntroScreen: React.FC = () => {
     const authResult = await auth().signInWithCredential(googleCredential);
 
     const uid = authResult.user.uid;
-
     const currentTime = new Date();
     const reference = database().ref(`member/${uid}`);
 
-    await reference.update({
-      lastLoginAt: currentTime.toISOString(),
-    });
+    const lastLoginUserInfo = await reference
+      .once('value')
+      .then(snapshot => snapshot.val());
+    const lastLoginDate = new Date(lastLoginUserInfo.lastLoginAt);
+    const isLastLoginBeforeOneDay =
+      currentTime.getTime() - lastLoginDate.getTime() >= 1000 * 60 * 60 * 24;
+
+    if (isLastLoginBeforeOneDay) {
+      await reference.update({
+        availableLikeCount: 5,
+        lastLoginAt: currentTime.toISOString(),
+      });
+    } else {
+      await reference.update({
+        lastLoginAt: currentTime.toISOString(),
+      });
+    }
 
     const userInfo = await reference
       .once('value')
@@ -52,6 +65,7 @@ export const IntroScreen: React.FC = () => {
         userEmail: userInfo.email,
         userName: userInfo.name,
         profileImage: userInfo.profile,
+        availableLikeCount: userInfo.avilableLikeCount ?? 5,
       }),
     );
 
@@ -77,9 +91,20 @@ export const IntroScreen: React.FC = () => {
     const user = await reference.once('value').then(snapshot => snapshot.val());
 
     if (user !== null) {
-      await reference.update({
-        lastLoginAt: currentTime.toISOString(),
-      });
+      const lastLoginDate = new Date(user.lastLoginAt);
+      const isLastLoginBeforeOneDay =
+        currentTime.getTime() - lastLoginDate.getTime() >= 1000 * 60 * 60 * 24;
+
+      if (isLastLoginBeforeOneDay) {
+        await reference.update({
+          availableLikeCount: 5,
+          lastLoginAt: currentTime.toISOString(),
+        });
+      } else {
+        await reference.update({
+          lastLoginAt: currentTime.toISOString(),
+        });
+      }
 
       const userInfo = await reference
         .once('value')
@@ -90,6 +115,7 @@ export const IntroScreen: React.FC = () => {
           userEmail: userInfo.email,
           userName: userInfo.name,
           profileImage: userInfo.profile,
+          availableLikeCount: userInfo.avilableLikeCount ?? 5,
         }),
       );
 

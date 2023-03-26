@@ -3,6 +3,7 @@
  * https://github.com/facebook/react-native
  *
  * @format
+ *
  */
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -17,6 +18,7 @@ import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Provider} from 'react-redux';
 import store from './src/store';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {withIAPContext} from 'react-native-iap';
 
 GoogleSignin.configure({
   webClientId:
@@ -52,4 +54,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default withIAPContext(App);

@@ -14,6 +14,9 @@ export const GET_USER_LIKED_HISTORY_SUCCESS =
 export const GET_USER_LIKED_HISTORY_FAILURE =
   'GET_USER_LIKED_HISTORY_FAILURE' as const;
 
+export const PURCHASE_ITEM_SUCCESS = 'PURCHASE_ITEM_SUCCESS' as const;
+export const PURCHASE_ITEM_FAILURE = 'PURCHASE_ITEM_FAILURE' as const;
+
 export const setUser = (user: TypeUser) => {
   return {
     type: SET_USER_INFO,
@@ -35,6 +38,18 @@ export const getUserLikedHistorySuccess = (history: TypeDog[]) => {
 export const getUserLikedHistoryFailure = () => {
   return {
     type: GET_USER_LIKED_HISTORY_FAILURE,
+  };
+};
+
+export const purchaseItemSuccess = () => {
+  return {
+    type: PURCHASE_ITEM_SUCCESS,
+  };
+};
+
+export const purchaseItemFailure = () => {
+  return {
+    type: PURCHASE_ITEM_FAILURE,
   };
 };
 
@@ -66,6 +81,25 @@ export const getUserLikedHistory =
     dispatch(getUserLikedHistorySuccess(dogList));
   };
 
+export const userPurchaseItem =
+  (): TypeUserThunkAction => async (dispatch, getState) => {
+    const user = getState().user.user;
+    if (user === null) {
+      //구매실패
+      dispatch(purchaseItemFailure());
+
+      return;
+    }
+
+    const memberRef = `member/${user.uid}`;
+    const reference = await database().ref(memberRef);
+    await reference.update({
+      availableLikeCount: user.availableLikeCount + 5,
+    });
+
+    dispatch(purchaseItemSuccess());
+  };
+
 export type TypeUserThunkAction = ThunkAction<
   void,
   TypeRootReducer,
@@ -83,4 +117,6 @@ export type UserActions =
   | ReturnType<typeof setUser>
   | ReturnType<typeof getUserLikedHistoryRequest>
   | ReturnType<typeof getUserLikedHistorySuccess>
-  | ReturnType<typeof getUserLikedHistoryFailure>;
+  | ReturnType<typeof getUserLikedHistoryFailure>
+  | ReturnType<typeof purchaseItemFailure>
+  | ReturnType<typeof purchaseItemSuccess>;
