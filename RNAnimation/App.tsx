@@ -7,13 +7,14 @@
 
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import AnimatedComponents from './src/chap2/AnimatedComponents';
+import AnimatedDecay from './src/chap2/AnimatedDecay';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView
       style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <AnimatedComponents />
+      {/* <AnimatedComponents /> */}
+      <AnimatedDecay />
     </SafeAreaView>
   );
 }
