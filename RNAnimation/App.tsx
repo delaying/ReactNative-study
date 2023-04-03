@@ -7,17 +7,13 @@
 
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import AnimatedComposing from './src/chap2/AnimatedComposing';
-import AnimatedDecay from './src/chap2/AnimatedDecay';
-import AnimatedOther from './src/chap2/AnimatedOther';
-import AnimatedProperty from './src/chap2/AnimatedProperty';
+import Snackbar from './src/chap3/Snackbar';
+import DrawerMenu from './src/chap3/DrawerMenu';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView
-      style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      {/* <AnimatedComponents /> */}
-      <AnimatedProperty />
+    <SafeAreaView style={{flex: 1}}>
+      <DrawerMenu />
     </SafeAreaView>
   );
 }
