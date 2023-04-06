@@ -7,9 +7,11 @@
 
 import React from 'react';
 import PanresponderBall from './src/chap6/PanresponderBall';
+import PanresponderModal from './src/chap6/PanresponderModal';
+import PanresponderBanner from './src/chap6/PanresponderBanner';
 
 function App(): JSX.Element {
-  return <PanresponderBall />;
+  return <PanresponderBanner />;
 }
 
 export default App;
