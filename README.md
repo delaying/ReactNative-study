@@ -29,6 +29,7 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 
 ## React Native Animation 프로젝트
 
+- [Animated 실습](https://github.com/delaying/ReactNative-study/tree/main/RNAnimation#Animated-실습)
 - [유튜브뮤직 클론 코딩](https://github.com/delaying/ReactNative-study/tree/main/RNAnimation/src/YoutubeMusic#유튜브뮤직-클론-앱)
 - 모바일페이 클론 코딩
 
