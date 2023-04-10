@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 
-import Bottom from '../YoutubeMusic/components/Bottom';
-import CategoryHeader from '../YoutubeMusic/components/CategoryHeader';
-import HeaderBackground from '../YoutubeMusic/components/HeaderBackground';
-import LogoHeader from '../YoutubeMusic/components/LogoHeader';
+import Bottom from './components/bottom/Bottom';
+import CategoryHeader from './components/header/CategoryHeader';
+import HeaderBackground from '../YoutubeMusic/components/header/HeaderBackground';
+import LogoHeader from '../YoutubeMusic/components/header/LogoHeader';
+import MusicListSmall from './components/musicList/MusicListSmall';
+import MusicListMedium from './components/musicList/MusicListMedium';
+import MusicListLarge from './components/musicList/MusicListLarge';
 
 export default () => {
   const [selectedCategory, setSelectedCategory] = useState();
@@ -17,8 +20,10 @@ export default () => {
         selectedCategory={selectedCategory}
       />
       <ScrollView style={{borderWidth: 1}}>
-        <View style={{height: 10000}}>
-          <Text>Music list</Text>
+        <View style={{height: 1000}}>
+          <MusicListSmall />
+          <MusicListMedium />
+          <MusicListLarge />
         </View>
       </ScrollView>
       <Bottom />

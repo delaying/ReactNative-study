@@ -15,8 +15,8 @@ export default ({selectedCategory}) => {
           start={{x: 0.7, y: 0.25}}
           end={{x: 0.5, y: 1.0}}
           locations={[0, 0.3, 0.6, 1]}
-          colors={['#ffa10030', '#28bf4b10', '#22222290', '#11111130']}
-          style={{height: 350, opacity: 0.4}}
+          colors={['#ee222230', '#ffa10030', '#28bf4b10', '#11111130']}
+          style={{height: 350, opacity: 0.3}}
         />
       ) : (
         <>

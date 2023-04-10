@@ -17,7 +17,9 @@ export default ({setSelectedCategory, selectedCategory}) => {
         contentContainerStyle={{paddingHorizontal: 10}}>
         {category.map((value, index) => {
           return (
-            <TouchableOpacity onPress={() => onPressCategory(index)}>
+            <TouchableOpacity
+              onPress={() => onPressCategory(index)}
+              key={index}>
               <View
                 style={{
                   padding: 8,

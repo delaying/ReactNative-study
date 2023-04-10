@@ -15,7 +15,7 @@ export default () => {
           alignItems: 'center',
         }}>
         <Image
-          source={require('../../assets/logo.png')}
+          source={require('../../../assets/logo.png')}
           style={{width: 90, height: 30}}
         />
         <View style={{flexDirection: 'row'}}>
