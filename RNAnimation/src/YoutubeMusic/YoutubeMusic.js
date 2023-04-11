@@ -19,8 +19,8 @@ export default () => {
         setSelectedCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
       />
-      <ScrollView style={{borderWidth: 1}}>
-        <View style={{height: 1000}}>
+      <ScrollView>
+        <View style={{marginBottom: 100}}>
           <MusicListSmall />
           <MusicListMedium />
           <MusicListLarge />
