@@ -201,7 +201,7 @@
 
 ### Modal UI
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231392187-9263b546-fa41-44e0-b5b1-5172f7fdb377.GIF" width="200" height="400">
 
 - 저장하기, 좋아요,삭제하기, 닫기 등의 여러개의 선택지가 있는 menu modal UI
 - react-native-iphone-x-helper이용
@@ -210,7 +210,7 @@
 
 ### Banner Slider
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231392232-fd31598f-cf4d-4f38-a669-f79c1dca8a1f.GIF" width="200" height="400">
 
 - 4개의 영역이 나란하게 화면을 차지
 - 하단의 네비게이션 버튼을 누르면 각 영역으로 이동
@@ -269,7 +269,7 @@
 
 ### Font Slider
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231392218-0c578b2a-e269-426e-8806-71e6aa3288ac.GIF" width="200" height="400">
 
 - 1~4단계의 폰트가 있고, 단계마다 폰트 스타일 값을 가지는 ui
 - 다른 단계까지는 클릭으로 이동
