@@ -1,14 +1,22 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text, View, Animated} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-export default ({selectedCategory}) => {
+export default ({selectedCategory, headerBgAnim}) => {
   return (
-    <View
+    <Animated.View
       style={{
         position: 'absolute',
         height: 350,
         width: '100%',
+        top: headerBgAnim.interpolate({
+          inputRange: [-1, 0, 100],
+          outputRange: [0, 0, -100],
+        }),
+        opacity: headerBgAnim.interpolate({
+          inputRange: [0, 100],
+          outputRange: [1, 0],
+        }),
       }}>
       {selectedCategory === undefined ? (
         <LinearGradient
@@ -33,6 +41,6 @@ export default ({selectedCategory}) => {
           />
         </>
       )}
-    </View>
+    </Animated.View>
   );
 };

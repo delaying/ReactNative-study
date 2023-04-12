@@ -1,7 +1,7 @@
 import React from 'react';
-import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {Animated, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 
-export default ({setSelectedCategory, selectedCategory}) => {
+export default ({setSelectedCategory, selectedCategory, headerAnim}) => {
   const category = ['휴식', '에너지 충전', '집중', '운동', '출퇴근/등하교'];
 
   const onPressCategory = index => {
@@ -10,10 +10,19 @@ export default ({setSelectedCategory, selectedCategory}) => {
   };
   return (
     <View>
-      <ScrollView
+      <Animated.ScrollView
         showsHorizontalScrollIndicator={false}
         horizontal={true}
-        style={{flexDirection: 'row', paddingVertical: 20}}
+        style={{
+          flexDirection: 'row',
+          paddingVertical: 20,
+          paddingBottom: 5,
+          borderBottomWidth: headerAnim.interpolate({
+            inputRange: [0, 40],
+            outputRange: [0, 0.5],
+          }),
+          borderBottomColor: '#444',
+        }}
         contentContainerStyle={{paddingHorizontal: 10}}>
         {category.map((value, index) => {
           return (
@@ -41,7 +50,7 @@ export default ({setSelectedCategory, selectedCategory}) => {
             </TouchableOpacity>
           );
         })}
-      </ScrollView>
+      </Animated.ScrollView>
     </View>
   );
 };
