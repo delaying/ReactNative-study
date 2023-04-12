@@ -1,20 +1,33 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View, Animated, Dimensions} from 'react-native';
 import {BOTTOM_HEIGHT} from '../../utils';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {getBottomSpace} from 'react-native-iphone-x-helper';
 
-export default () => {
+const {width, height} = Dimensions.get('window');
+export default ({playlistAnim}) => {
   return (
-    <View style={{backgroundColor: '#222', paddingBottom: getBottomSpace()}}>
-      <View style={{height: BOTTOM_HEIGHT}}>
-        <View style={{flexDirection: 'row'}}>
-          <BottomItem name={'home-filled'} title={'홈'} />
-          <BottomItem name={'explore'} title={'둘러보기'} />
-          <BottomItem name={'library-music'} title={'보관함'} />
+    <Animated.View
+      style={{
+        marginBottom: playlistAnim.interpolate({
+          inputRange: [0, height / 2, height],
+          outputRange: [
+            0,
+            -BOTTOM_HEIGHT - getBottomSpace(),
+            -BOTTOM_HEIGHT - getBottomSpace(),
+          ],
+        }),
+      }}>
+      <View style={{backgroundColor: '#222', paddingBottom: getBottomSpace()}}>
+        <View style={{height: BOTTOM_HEIGHT}}>
+          <View style={{flexDirection: 'row'}}>
+            <BottomItem name={'home-filled'} title={'홈'} />
+            <BottomItem name={'explore'} title={'둘러보기'} />
+            <BottomItem name={'library-music'} title={'보관함'} />
+          </View>
         </View>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 
