@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {Animated, View} from 'react-native';
-import Icon from 'react-native-vector-icons/Fontisto';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default () => {
   return (
@@ -30,7 +30,7 @@ export default () => {
               }),
               left: `${Math.floor(Math.random() * 100)}%`,
             }}>
-            <Icon name="snowflake-6" size={16} color="#fff" />
+            <Icon name="snow-outline" size={16} color="#fff" />
           </Animated.View>
         );
       })}

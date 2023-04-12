@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {
   Animated,
   Button,
@@ -82,10 +82,15 @@ export default () => {
           borderTopLeftRadius: 8,
           borderTopRightRadius: 8,
         }}>
-        <ListItem onPress={hideModal} color icon="pushpino" title="저장하기" />
-        <ListItem onPress={hideModal} color icon="hearto" title="좋아요" />
+        <ListItem
+          onPress={hideModal}
+          color
+          icon="content-save"
+          title="저장하기"
+        />
+        <ListItem onPress={hideModal} color icon="heart" title="좋아요" />
         <ListItem onPress={hideModal} color icon="delete" title="삭제하기" />
-        <ListItem onPress={hideModal} color="#999" icon="back" title="닫기" />
+        <ListItem onPress={hideModal} color="#999" icon="close" title="닫기" />
       </Animated.View>
     </View>
   );

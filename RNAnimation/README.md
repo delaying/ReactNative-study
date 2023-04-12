@@ -5,7 +5,6 @@
 ---
 
 - [Animated 실습](#animated)
-  - [Snackbar UI](#snackbar-ui)
   - [Drawer Menu](#drawer-menu)
   - [Collapse](#collapse)
   - [Progress Bar](#progress-bar)
@@ -25,17 +24,9 @@
 
 ## Animated
 
-### Snackbar UI
-
-<img src="" width="200" height="400">
-
-- 유저에게 상태내용을 효과적으로 전달하기 위해 상태내용이 담긴 UI를 띄워주는 형식
-- snackbar의 내용을 인지해야 하는 유저를 위해 일정시간동안 보여주고, 다시 사라지는 방식
-- 앱을 사용할 때 snackbar는 시각적으로 거슬리지 말아야하므로 최상단이나 최하단에 배치됨
-
 ### Drawer Menu
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231386816-cab8c934-3523-402a-93a0-b7600eed431a.GIF" width="200" height="400">
 
 - 서랍처럼 열고 닫을 수 있는 형태로 일반적인 메뉴 UI로 많이 사용됨
 - UI 내용
@@ -47,21 +38,21 @@
 
 ### Collapse
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231386545-4ee97e1c-ca16-412c-85c5-4b6be65d0ae6.GIF" width="200" height="400">
 
 - 클릭하면 아래로 펼쳐지고, 다시 누르면 접히는 UI
 - 공지사항에서 많이 접하던 UI
 
 ### Progress Bar
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231386563-07b8f7b7-0c27-4c72-87a9-57678ca5dbb1.GIF" width="200" height="400">
 
 - 상태 값에 맞춰 변화하는 UI
 - 다양한 방식으로 바리에이션을 줄 수 있는 UI
 
 ### Skeleton
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231388142-a1310c0b-6320-4ce5-8381-35b7d271a2d8.GIF" width="200" height="400">
 
 - 본격적인 데이터가 뜨기 전 나오는 애니메이션 화면
 - 데이터가 뜨기 전 로딩시간이 체감적으로 감소
@@ -82,7 +73,7 @@
 
 ### Snow Background
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231388165-70e4ade1-8412-4d56-bbea-812549c8e34e.GIF" width="200" height="400">
 
 - 눈 아이콘을 100개 각각 애니메이션 컨트롤
 - 랜덤한 x 좌표
@@ -143,7 +134,7 @@
 
 ### Page Header
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231389420-cd3a68f0-7f77-4135-b098-e2f345931e9d.GIF" width="200" height="400">
 
 - 큰 영역의 header, 작은 영역의 header 두 부분의 ui 구현
 - ScrollView 컴포넌트로 스크롤이 되는 뷰를 만들것
@@ -205,7 +196,7 @@
 
 ### 공던지기
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231389433-21a20f25-f063-436e-a5a6-0197187f3ff3.GIF" width="200" height="400">
 - 공을 터치방향과 속도에 맞추어 던지기
 
 ### Modal UI
