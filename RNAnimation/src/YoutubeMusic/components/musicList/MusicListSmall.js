@@ -60,7 +60,7 @@ export default () => {
           return (
             <View style={{width: width * 0.92}}>
               {[...Array(4)].map((value, index) => {
-                return <MusicListSmallItem />;
+                return <MusicListSmallItem key={index} />;
               })}
             </View>
           );

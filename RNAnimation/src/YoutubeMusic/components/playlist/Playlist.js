@@ -7,8 +7,10 @@ import {
   Animated,
   Dimensions,
 } from 'react-native';
-import PlaylistFull from './PlaylistFull';
 import PlaylistMini from './PlaylistMini';
+import PlaylistFullTop from './playlistFull/playlistFullTop';
+import PlaylistFullBottom from './playlistFull/PlaylistFullBottom';
+import PlaylistFullMiddle from './playlistFull/PlaylistFullMiddle';
 
 const {width, height} = Dimensions.get('window');
 export default ({playlistAnim}) => {
@@ -78,24 +80,29 @@ export default ({playlistAnim}) => {
           outputRange: [10, width * 0.1, width * 0.1],
         }),
       }}>
-      <Animated.View
-        style={{
-          justifyContent: 'center',
-          width: playlistAnim.interpolate({
-            inputRange: [0, height / 2, height],
-            outputRange: [50, width * 0.8, width * 0.8],
-          }),
-          height: playlistAnim.interpolate({
-            inputRange: [0, height / 2, height],
-            outputRange: [50, width * 0.8, width * 0.8],
-          }),
-        }}>
-        <Image
-          source={{uri: 'https://picsum.photos/300'}}
-          style={{width: '100%', height: '100%'}}
-        />
-      </Animated.View>
-      {/* <PlaylistFull /> */}
+      <View>
+        <View>
+          <PlaylistFullTop playlistAnim={playlistAnim} />
+        </View>
+        <Animated.View
+          style={{
+            justifyContent: 'center',
+            width: playlistAnim.interpolate({
+              inputRange: [0, height / 2, height],
+              outputRange: [50, width * 0.8, width * 0.8],
+            }),
+            height: playlistAnim.interpolate({
+              inputRange: [0, height / 2, height],
+              outputRange: [50, width * 0.8, width * 0.8],
+            }),
+          }}>
+          <Image
+            source={{uri: 'https://picsum.photos/300'}}
+            style={{width: '100%', height: '100%'}}
+          />
+        </Animated.View>
+        <PlaylistFullMiddle playlistAnim={playlistAnim} />
+      </View>
       <Animated.View
         style={{
           flex: 1,
@@ -106,6 +113,7 @@ export default ({playlistAnim}) => {
         }}>
         <PlaylistMini />
       </Animated.View>
+      <PlaylistFullBottom playlistAnim={playlistAnim} />
     </Animated.View>
   );
 };

@@ -14,7 +14,7 @@ export default () => {
         contentContainerStyle={{paddingHorizontal: 10}}>
         {[...Array(7)].map((value, index) => {
           return (
-            <View style={{marginRight: 20}}>
+            <View key={index} style={{marginRight: 20}}>
               <MusicListMediumItem />
               <MusicListMediumItem />
             </View>
