@@ -6,10 +6,10 @@
  */
 
 import React from 'react';
-import YoutubeMusic from './src/YoutubeMusic/YoutubeMusic';
+import MobilePay from './src/mobilePay/MobilePay';
 
 function App(): JSX.Element {
-  return <YoutubeMusic />;
+  return <MobilePay />;
 }
 
 export default App;
