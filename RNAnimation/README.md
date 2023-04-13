@@ -312,6 +312,9 @@
 
 ### 결과 화면
 
-<img src="" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/72879145/231795202-9530e8d4-44f3-4872-af2f-995c8401402b.GIF" width="200" height="400">
 
 ### 정리
+
+- 카드를 옆으로 넘기는 애니메이션
+- 카드를 펼치고 카드를 여는 애니메이션
