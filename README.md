@@ -35,5 +35,5 @@ React Native 관련하여 공부한 내용들과, 프로젝트들을 진행하�
 
 ## 최종 프로젝트
 
-- 채팅 앱
+- [채팅 앱](https://github.com/delaying/ReactNative-Chat#채팅-앱)
 - 영화 정보 앱
